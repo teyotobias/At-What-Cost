@@ -1,1 +1,1 @@
-# MERN-Stack eccomerce platform "At What Cost?"
+# MERN-Stack ecommerce platform "At What Cost?"
