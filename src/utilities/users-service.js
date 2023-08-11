@@ -43,11 +43,11 @@ export function getUser() {
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
 
-export async function checkToken() {
-  //Key to know how to use .then with promises
-    //Below is a promise: usersAPI.checkToken() returns a string
-    // containing the exp date of the token, then we use .then to 
-    // turn it into a date object
-  return usersAPI.checkToken()
-    .then(dateStr => new Date(dateStr));
-}
+// export async function checkToken() {
+//   //Key to know how to use .then with promises
+//     //Below is a promise: usersAPI.checkToken() returns a string
+//     // containing the exp date of the token, then we use .then to 
+//     // turn it into a date object
+//   return usersAPI.checkToken()
+//     .then(dateStr => new Date(dateStr));
+// }
