@@ -13,6 +13,9 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 
+//PAYMENT
+// const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY); PM
+
  // Configure both serve-favicon & static middleware
  // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
