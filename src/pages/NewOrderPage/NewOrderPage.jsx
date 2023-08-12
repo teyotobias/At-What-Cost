@@ -2,7 +2,7 @@ import './NewOrderPage.css';
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
@@ -14,6 +14,8 @@ export default function NewOrderPage({ user, setUser}) {
     const [activeCat, setActiveCat] = useState('');
     const [cart, setCart] = useState(null);
     const categoriesRef = useRef([]);
+    //navigate fx to change routes programmatically
+    const navigate = useNavigate();
 
 
     useEffect(function() {
@@ -32,9 +34,24 @@ export default function NewOrderPage({ user, setUser}) {
         }
         getCart();
     }, []);
-
     //fetch items from server using ajax
     //when data comes back, call setStoreItems to update state
+
+    //EVENT HANDLERS
+    async function handleAddToOrder(itemId) {
+        //update cart state w/updated cart from server
+        const cart = await ordersAPI.addItemToCart(itemId);
+        setCart(cart);
+    }
+    async function handleChangeQty(itemId, newQty) {
+        const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
+        setCart(updatedCart);
+    }
+    async function handleCheckout() {
+        await ordersAPI.checkout();
+        navigate('/orders');
+      }
+
 
     return (
         <main className="NewOrderPage">
@@ -50,8 +67,9 @@ export default function NewOrderPage({ user, setUser}) {
             </aside>
             <StoreList
                 storeItems={storeItems.filter(item => item.category.name === activeCat)}
+                handleAddToOrder={handleAddToOrder}
             />
-            <OrderDetail order={cart}/>
+            <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout}/>
         </main>
     )
 }
