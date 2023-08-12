@@ -1,6 +1,7 @@
 import './NewOrderPage.css';
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
+import * as ordersAPI from '../../utilities/orders-api';
 import { Link } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
 import StoreList from '../../components/StoreList/StoreList';
@@ -11,6 +12,7 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut';
 export default function NewOrderPage({ user, setUser}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
+    const [cart, setCart] = useState(null);
     const categoriesRef = useRef([]);
 
 
@@ -22,6 +24,13 @@ export default function NewOrderPage({ user, setUser}) {
             setActiveCat(categoriesRef.current[0]);
         }
         getItems();
+
+        // load cart - unpaid order
+        async function getCart() {
+            const cart = await ordersAPI.getCart();
+            setCart(cart);
+        }
+        getCart();
     }, []);
 
     //fetch items from server using ajax
@@ -42,7 +51,7 @@ export default function NewOrderPage({ user, setUser}) {
             <StoreList
                 storeItems={storeItems.filter(item => item.category.name === activeCat)}
             />
-            <OrderDetail />
+            <OrderDetail order={cart}/>
         </main>
     )
 }
