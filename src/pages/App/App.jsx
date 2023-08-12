@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import AuthPage from '../AuthPage/AuthPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
@@ -13,16 +13,14 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   return (
     <main className="App">
-      {/* navbar would go here if we want it to render either way */}
       { user ?
-          <>
-            {/* <NavBar user={user} setUser={setUser}/> */}
-            <Routes>
-              <Route path="/orders/new" element={<NewOrderPage user={user} setUser={setUser}/>} />
-              <Route path="/orders" element={<OrderHistoryPage />} />
-            </Routes>
-          </>
-          :
+        <Routes>
+          <Route path="/orders/new" element={<NewOrderPage user={user} setUser={setUser}/>} />
+          <Route path="/orders" element={<OrderHistoryPage />} />
+          {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
+          <Route path="/*" element={<Navigate to="/orders/new" />} />
+        </Routes>
+        :
         <AuthPage setUser={setUser}/>
       }
     </main>
