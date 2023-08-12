@@ -13,6 +13,22 @@
     border-bottom: .1vmin solid var(--tan-3);
 }
 
+/* .LineItem .emoji {
+    height: 8vw;
+    width: 8vw;
+    font-size: 4vw;
+    background-color: var(--tan-1);
+    border: .1vmin solid var(--tan-3);
+    border-radius: 1vmin;
+} */
+.LineItem .emoji img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+}
+
 .LineItem .qty {
     display: flex;
     justify-content: space-between;
