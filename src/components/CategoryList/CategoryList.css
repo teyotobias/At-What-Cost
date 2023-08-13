@@ -10,12 +10,15 @@
     text-align: center;
     border-radius: .5vmin;
     margin-bottom: .5vmin;
+    font-family: var(--app-font);
   }
       
   .CategoryList li:hover:not(.active) {
     cursor: pointer;
-    background-color: var(--orange);
+    background-color: var(--tan-2);
     color: var(--white);
+    font-weight: bold;
+    
   }
   
   .CategoryList li.active {

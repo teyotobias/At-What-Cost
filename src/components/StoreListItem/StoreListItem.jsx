@@ -1,6 +1,6 @@
 import './StoreListItem.css';
 
-export default function StoreListItem({ storeItem }) {
+export default function StoreListItem({ storeItem, handleAddToOrder }) {
   return (
     <div className="MenuListItem">
       {/* <div className="emoji flex-ctr-ctr">{storeItem.image}</div> */}
@@ -11,7 +11,7 @@ export default function StoreListItem({ storeItem }) {
       <div className="name">{storeItem.name}</div>
       <div className="buy">
         <span>${storeItem.price.toFixed(2)}</span>
-        <button className="btn-sm" onClick={() => console.log('clicked')}>
+        <button className="btn-sm add-btn" onClick={() => handleAddToOrder(storeItem._id)}>
           ADD
         </button>
       </div>

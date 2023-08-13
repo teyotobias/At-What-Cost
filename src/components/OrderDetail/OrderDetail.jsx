@@ -1,16 +1,27 @@
 import LineItem from '../LineItem/LineItem';
-
+import './OrderDetail.css';
+import StripeContainer from '../StripeContainer/StripeContainer';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // Used to display the details of any order, including the cart (unpaid order)
-export default function OrderDetail({ order }) {
+export default function OrderDetail({ order, handleChangeQty, handleSuccessfulPayment }) {
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const navigate = useNavigate();
+
   if (!order) return null;
 
   const lineItems = order.lineItems.map(item =>
     <LineItem
       lineItem={item}
       isPaid={order.isPaid}
+      handleChangeQty={handleChangeQty}
       key={item._id}
     />
   );
+  if (isCheckingOut) {
+    const orderTotalInCents = Math.round(order.orderTotal * 100);
+    return <StripeContainer orderTotal={orderTotalInCents} handleSuccessfulPayment={handleSuccessfulPayment}/>
+  }
 
   return (
     <div className="OrderDetail">
@@ -22,7 +33,7 @@ export default function OrderDetail({ order }) {
         }
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
-      <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
+      <div className="line-item-container flex-ctr-ctr flex-col scroll-y detail-font">
         {lineItems.length ?
           <>
             {lineItems}
@@ -31,8 +42,10 @@ export default function OrderDetail({ order }) {
                 <span className="right">TOTAL&nbsp;&nbsp;</span>
                 :
                 <button
-                  className="btn-sm"
-                  onClick={() => alert('clicked')}
+                  className="btn-sm btn-checkout"
+                  onClick={() => {
+                    navigate('/payment', { state: { orderTotal: order.orderTotal }});
+                  }}
                   disabled={!lineItems.length}
                 >CHECKOUT</button>
               }
@@ -46,6 +59,4 @@ export default function OrderDetail({ order }) {
       </div>
     </div>
   );
-
-
 }
