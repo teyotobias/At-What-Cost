@@ -16,6 +16,7 @@
     justify-content: flex-start;
     height: calc(100vh - 18vmin);
     width: 100%;
+    font-family: var(--app-font);
   }
   
   .OrderDetail .total {
@@ -44,4 +45,9 @@
     position: absolute;
     top: 50vh;
     font-size: 2vmin;
+  }
+  .btn-checkout {
+    background-color: rgb(60,60,60)!important;
+    font-family: var(--app-font);
+    border-radius: 20px;
   }

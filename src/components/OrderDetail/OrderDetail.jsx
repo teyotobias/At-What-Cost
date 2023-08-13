@@ -33,7 +33,7 @@ export default function OrderDetail({ order, handleChangeQty, handleSuccessfulPa
         }
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
-      <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
+      <div className="line-item-container flex-ctr-ctr flex-col scroll-y detail-font">
         {lineItems.length ?
           <>
             {lineItems}
@@ -42,7 +42,7 @@ export default function OrderDetail({ order, handleChangeQty, handleSuccessfulPa
                 <span className="right">TOTAL&nbsp;&nbsp;</span>
                 :
                 <button
-                  className="btn-sm"
+                  className="btn-sm btn-checkout"
                   onClick={() => {
                     navigate('/payment', { state: { orderTotal: order.orderTotal }});
                   }}
