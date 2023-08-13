@@ -32,6 +32,7 @@
   .MenuListItem .buy {
     display: flex;
     flex-direction: column;
+    font-family: var(--app-font);
   }
   
   .MenuListItem .buy span {
@@ -44,4 +45,10 @@
     font-size: 2vw;
     text-align: center;
     color: var(--text-light);
+    font-family: var(--app-font);
+  }
+  .add-btn {
+    font-family: var(--app-font);
+    background-color: rgb(60,60,60)!important;
+    border-radius: 200px;
   }

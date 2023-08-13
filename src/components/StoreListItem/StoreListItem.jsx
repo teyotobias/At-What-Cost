@@ -11,7 +11,7 @@ export default function StoreListItem({ storeItem, handleAddToOrder }) {
       <div className="name">{storeItem.name}</div>
       <div className="buy">
         <span>${storeItem.price.toFixed(2)}</span>
-        <button className="btn-sm" onClick={() => handleAddToOrder(storeItem._id)}>
+        <button className="btn-sm add-btn" onClick={() => handleAddToOrder(storeItem._id)}>
           ADD
         </button>
       </div>

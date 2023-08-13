@@ -20,13 +20,14 @@ export function setItemQtyInCart(itemId, newQty) {
   return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', { itemId, newQty });
 }
 
-// Updates the order's (cart's) isPaid property to true
-export function checkout() {
-  // Changing data on the server, so make it a POST request
-  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
-}
+
 
 // Fetches all orders for the logged in user
 export function getAllForUser() {
   return sendRequest(`${BASE_URL}`);
+}
+
+export function processStripePayment(paymentData) {
+  console.log(paymentData);
+  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', paymentData);
 }

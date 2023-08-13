@@ -47,10 +47,9 @@ export default function NewOrderPage({ user, setUser}) {
         const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
         setCart(updatedCart);
     }
-    async function handleCheckout() {
-        await ordersAPI.checkout();
+    function handleSuccessfulPayment() {
         navigate('/orders');
-      }
+    }
 
 
     return (
@@ -62,14 +61,14 @@ export default function NewOrderPage({ user, setUser}) {
                 activeCat={activeCat}
                 setActiveCat={setActiveCat}
                 />
-                <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
+                <Link to="/orders" className="button btn-sm histBtn">PREVIOUS ORDERS</Link>
                 <UserLogOut user={user} setUser={setUser} />
             </aside>
             <StoreList
                 storeItems={storeItems.filter(item => item.category.name === activeCat)}
                 handleAddToOrder={handleAddToOrder}
             />
-            <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout}/>
+            <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
         </main>
     )
 }

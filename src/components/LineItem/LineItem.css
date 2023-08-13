@@ -12,6 +12,9 @@
 .LineItem:last-child {
     border-bottom: .1vmin solid var(--tan-3);
 }
+.inc-btn {
+    background-color: rgb(60,60,60)!important;
+}
 
 /* .LineItem .emoji {
     height: 8vw;
