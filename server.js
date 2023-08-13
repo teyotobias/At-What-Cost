@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const Stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
+const cors = require('cors');
 
 require('dotenv').config();
 
@@ -9,12 +11,12 @@ require('dotenv').config();
 require('./config/database');
    
 const app = express();
+
+app.use(cors());
    
 app.use(logger('dev'));
 app.use(express.json());
 
-//PAYMENT
-// const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY); PM
 
  // Configure both serve-favicon & static middleware
  // to serve from the production 'build' folder

@@ -1,7 +1,13 @@
 import LineItem from '../LineItem/LineItem';
 import './OrderDetail.css';
+import StripeContainer from '../StripeContainer/StripeContainer';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // Used to display the details of any order, including the cart (unpaid order)
-export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
+export default function OrderDetail({ order, handleChangeQty, handleSuccessfulPayment }) {
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const navigate = useNavigate();
+
   if (!order) return null;
 
   const lineItems = order.lineItems.map(item =>
@@ -12,6 +18,10 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
       key={item._id}
     />
   );
+  if (isCheckingOut) {
+    const orderTotalInCents = Math.round(order.orderTotal * 100);
+    return <StripeContainer orderTotal={orderTotalInCents} handleSuccessfulPayment={handleSuccessfulPayment}/>
+  }
 
   return (
     <div className="OrderDetail">
@@ -33,7 +43,9 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                 :
                 <button
                   className="btn-sm"
-                  onClick={handleCheckout}
+                  onClick={() => {
+                    navigate('/payment', { state: { orderTotal: order.orderTotal }});
+                  }}
                   disabled={!lineItems.length}
                 >CHECKOUT</button>
               }
@@ -47,6 +59,4 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
       </div>
     </div>
   );
-
-
 }

@@ -47,10 +47,9 @@ export default function NewOrderPage({ user, setUser}) {
         const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
         setCart(updatedCart);
     }
-    async function handleCheckout() {
-        await ordersAPI.checkout();
+    function handleSuccessfulPayment() {
         navigate('/orders');
-      }
+    }
 
 
     return (
@@ -69,7 +68,7 @@ export default function NewOrderPage({ user, setUser}) {
                 storeItems={storeItems.filter(item => item.category.name === activeCat)}
                 handleAddToOrder={handleAddToOrder}
             />
-            <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout}/>
+            <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
         </main>
     )
 }
