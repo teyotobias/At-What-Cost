@@ -9,7 +9,7 @@ export default function UserLogOut({ user, setUser }) {
 
   return (
     <div className="UserLogOut">
-      <div>{user.name}</div>
+      <div className="usr-txt">{user.name}</div>
       <div className="email">{user.email}</div>
       <button className="btn-sm logOutBtn" onClick={handleLogOut}>LOG OUT</button>
     </div>
