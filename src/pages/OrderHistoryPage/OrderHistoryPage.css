@@ -14,3 +14,9 @@
     align-items: center;
     margin: 3vmin 2vmin;
 }
+.btn-new {
+    font-family: var(--app-font);
+    border-radius: 200px !important;
+    background-color: rgb(60,60,60)!important;
+    
+}
