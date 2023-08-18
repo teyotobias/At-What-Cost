@@ -5,6 +5,7 @@
     grid-template-rows: 1fr;
     background-color: var(--white);
     border-radius: 2vmin;
+    margin-bottom: 0px;
 }
   
 .NewOrderPage aside {
@@ -16,22 +17,34 @@
     background-color: var(--white);
 }
 
-.histBtn {
+a.histBtn {
     font-family: var(--app-font);
     border-radius: 200px !important;
     background-color: rgb(60,60,60)!important;
-    
+    margin-top: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4%;
+    padding: 7px !important;
 }
+
+
 @media (max-width: 1500px) {
     .histBtn {
         height: 5vmin;
-        font-size: 18px !important;
+        font-size: 16px !important;
         display: flex;
         justify-content: center;
         align-items: center;
         
     }
 }
+/* @media (max-width: 1300px) {
+    .NewOrderPage {
+        grid-template-columns: 1.6fr 5.5fr 1fr;
+    } 
+} */
 @media (max-width: 1200px) {
     .histBtn {
         font-size: 14px !important;

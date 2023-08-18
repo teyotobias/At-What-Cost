@@ -10,10 +10,11 @@
     border: .1vmin solid var(--tan-3);
     border-radius: 1vmin;
     font-size: 4vmin;
+    
   }
   
   .MenuListItem .emoji {
-    height: 8vw;
+    /* height: 8vw; */
     width: 8vw;
     font-size: 4vw;
     background-color: var(--tan-1);
@@ -33,10 +34,12 @@
     display: flex;
     flex-direction: column;
     font-family: var(--app-font);
+    height: 100%;
+    justify-content: space-between;
   }
   
   .MenuListItem .buy span {
-    font-size: 1.7vw;
+    font-size: 1.2vw;
     text-align: center;
     color: var(--text-light);
   }
@@ -51,4 +54,8 @@
     font-family: var(--app-font);
     background-color: rgb(60,60,60)!important;
     border-radius: 200px;
+    bottom: 0px;
+    right: 0px;
+    width: 80%;
   }
+

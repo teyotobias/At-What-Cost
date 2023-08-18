@@ -36,6 +36,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 5vmin;
     font-size: 1.3vw;
 }
 

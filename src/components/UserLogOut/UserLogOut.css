@@ -2,16 +2,20 @@
     font-size: 1.5vmin;
     color: var(--text-light);
     text-align: center;
+    margin-top: 1vmin;
   }
   
   .UserLogOut .email {
     font-size: smaller;
     font-family: var(--app-font);
-    margin-top: 3px;
+    margin-top: 1vmin;
   }
   
   .logOutBtn {
     font-family: var(--app-font);
     border-radius: 200px;
     background-color: rgb(60,60,60)!important;
+    font-size: 9px !important;
+    margin-bottom: 0px;
+    padding: 3px;
   }
