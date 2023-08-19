@@ -38,5 +38,3 @@ Join us in celebrating the beauty of value, absent of the need to ask yourself: 
 * NodeJS
 
 
-
-## At What Cost?
