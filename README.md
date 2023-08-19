@@ -3,7 +3,7 @@
     
     This universal truth is often the invisible weight on our shoulders, reminding us of the constant trade-offs we make every day.
 
-    Introducing "**At What Cost**?"—a MERN stack application dedicated to reselling high-quality clothing. 
+    Introducing "AT WHAT COST?"—a MERN stack application dedicated to reselling high-quality clothing. 
     
     Our platform is inspired by the very essence of understanding the intrinsic value of things. We aim to serve not just as a marketplace but as an oasis, a brief respite from the pressing demands and decisions of the world.
 
