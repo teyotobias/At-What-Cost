@@ -13,6 +13,7 @@ export default function NewOrderPage({ user, setUser}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
     const [isAsideVisible, setIsAsideVisible] = useState(false);
+    const [isOrderDetailVisible, setIsOrderDetailVisible] = useState(false);
     const [cart, setCart] = useState(null);
     const categoriesRef = useRef([]);
     //navigate fx to change routes programmatically
@@ -44,6 +45,15 @@ export default function NewOrderPage({ user, setUser}) {
             pageElement.classList.remove('aside-visible');
         }
     }, [isAsideVisible]);
+
+    useEffect(() => {
+        const pageElement = document.querySelector('.NewOrderPage');
+        if (isOrderDetailVisible) {
+            pageElement.classList.add('order-detail-visible');
+        } else {
+            pageElement.classList.remove('order-detail-visible');
+        }
+    }, [isOrderDetailVisible]);
     //fetch items from server using ajax
     //when data comes back, call setStoreItems to update state
 
@@ -89,7 +99,13 @@ export default function NewOrderPage({ user, setUser}) {
                 storeItems={storeItems.filter(item => item.category.name === activeCat)}
                 handleAddToOrder={handleAddToOrder}
             />
-            <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
+            <button 
+                className="toggle-order-detail" 
+                onClick={() => setIsOrderDetailVisible(!isOrderDetailVisible)}
+            >
+                {isOrderDetailVisible ? '⟨' : '⟩'}
+            </button>
+            {isOrderDetailVisible && <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>}
         </main>
     );
 }
