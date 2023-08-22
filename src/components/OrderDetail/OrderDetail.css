@@ -39,6 +39,7 @@
   .OrderDetail .total span.right {
     display: flex;
     justify-content: flex-end;
+    margin-right: 1vmin;
   }
   
   .OrderDetail .hungry {

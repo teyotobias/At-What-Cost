@@ -12,6 +12,7 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut';
 export default function NewOrderPage({ user, setUser}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
+    const [isAsideVisible, setIsAsideVisible] = useState(false);
     const [cart, setCart] = useState(null);
     const categoriesRef = useRef([]);
     //navigate fx to change routes programmatically
@@ -34,6 +35,15 @@ export default function NewOrderPage({ user, setUser}) {
         }
         getCart();
     }, []);
+
+    useEffect(() => {
+        const pageElement = document.querySelector('.NewOrderPage');
+        if (isAsideVisible) {
+            pageElement.classList.add('aside-visible');
+        } else {
+            pageElement.classList.remove('aside-visible');
+        }
+    }, [isAsideVisible]);
     //fetch items from server using ajax
     //when data comes back, call setStoreItems to update state
 
@@ -54,21 +64,32 @@ export default function NewOrderPage({ user, setUser}) {
 
     return (
         <main className="NewOrderPage">
-            <aside>
-                <Logo />
-                <CategoryList
-                categories={categoriesRef.current}
-                activeCat={activeCat}
-                setActiveCat={setActiveCat}
-                />
-                <Link to="/orders" className="button btn-sm histBtn">PREVIOUS ORDERS</Link>
-                <UserLogOut user={user} setUser={setUser} />
-            </aside>
+            {/* Toggle Button */}
+            <button 
+                className="toggle-aside" 
+                onClick={() => setIsAsideVisible(!isAsideVisible)}
+            >
+                {isAsideVisible ? '⟨' : '⟩'}
+            </button>
+
+            {isAsideVisible && (
+                <aside>
+                    <Logo />
+                    <CategoryList
+                    categories={categoriesRef.current}
+                    activeCat={activeCat}
+                    setActiveCat={setActiveCat}
+                    />
+                    <Link to="/orders" className="button btn-sm histBtn">PREVIOUS ORDERS</Link>
+                    <UserLogOut user={user} setUser={setUser} />
+                </aside>
+            )}
+
             <StoreList
                 storeItems={storeItems.filter(item => item.category.name === activeCat)}
                 handleAddToOrder={handleAddToOrder}
             />
             <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
         </main>
-    )
+    );
 }

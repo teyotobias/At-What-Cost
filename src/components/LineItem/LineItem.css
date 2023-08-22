@@ -45,6 +45,7 @@
     justify-content: flex-end;
     align-items: center;
     font-size: 1.3vw;
+    margin-right: 1vmin;
 }
 
 .LineItem button {
