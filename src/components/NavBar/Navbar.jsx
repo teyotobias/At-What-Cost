@@ -1,20 +1,18 @@
 import { Link } from 'react-router-dom';
-import * as userService from '../../utilities/users-service';
+import Logo from '../Logo/Logo.jsx';
+import './Logo.css';
 
-export default function NavBar( { user, setUser }) {
-    function handleLogOut() {
-        userService.logOut();
-        setUser(null);
-    }
+export default function NavBar( { user }) {
     return (
-        <nav>
+        <div className="navbar">
+            <div className="navbar-logo">
+                <Logo />
+            </div>
             <Link to="/orders">Order History</Link>
             &nbsp; | &nbsp;
             <Link to="/orders/new">New Order</Link>
             &nbsp; | &nbsp;
             <span>Welcome, {user.name}</span>
-            &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
-
-        </nav>
+        </div>
     )
 }
