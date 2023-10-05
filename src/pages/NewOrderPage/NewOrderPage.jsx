@@ -29,6 +29,16 @@ export default function NewOrderPage({ user, setUser}) {
         setIsRightSidebarOpen(!isRightSidebarOpen);
     }
 
+    useEffect(() => {
+        // Prevent horizontal scroll when right sidebar is closed
+        document.body.style.overflowX = isRightSidebarOpen ? 'visible' : 'hidden';
+        
+        // Cleanup on component unmount
+        return () => {
+            document.body.style.overflowX = 'visible';
+        };
+    }, [isRightSidebarOpen]);
+
 
     useEffect(function() {
         async function getItems() {
@@ -91,15 +101,14 @@ export default function NewOrderPage({ user, setUser}) {
             </section>
         
             <aside className={`right-sidebar ${isRightSidebarOpen ? 'right-sidebar-open' : 'right-sidebar-closed'}`}>
-                {/* Arrow Button */}
-                <button 
+                <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
+            </aside>
+            <button 
                     className={`arrow-btn arrow-${isRightSidebarOpen ? 'left' : 'right'}`} 
                     onClick={toggleRightSidebar}
                     >
                     {isRightSidebarOpen ? '❯' : '❮'}
-                </button>
-                <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
-            </aside>
+            </button>
         </main>
     )
 }

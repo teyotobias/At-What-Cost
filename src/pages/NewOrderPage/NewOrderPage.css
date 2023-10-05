@@ -11,15 +11,17 @@
 }
 .right-sidebar-open {
     transform: translateX(0);
+    visibility: visible;
 }
 .right-sidebar-closed {
     transform: translateX(100%);
+    visibility: hidden;
 }
 .arrow-btn {
     font-size: 24px; /* Adjust size as per requirement */
     position: absolute;
     top: 50%; 
-    z-index: 1000;
+    z-index: 1001;
     transform: translateY(-50%);
     cursor: pointer;
     background: none; /* No background */
@@ -34,6 +36,7 @@
   
   /* Right Sidebar Arrow */
   .arrow-right {
+    position: absolute;
     left: -20px; /* Positioning on the left side of the sidebar */
   }
   
@@ -55,6 +58,7 @@
 
 .NewOrderPage {
     height: 100%;
+    width: 100%;
     display: flex;
     position: relative;
     grid-template-rows: 1fr;

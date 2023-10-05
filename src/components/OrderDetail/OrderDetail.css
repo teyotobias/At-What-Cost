@@ -2,8 +2,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow:hidden;
     padding: 3vmin;
-    font-size: 2vmin;
+    font-size: 1vmin;
     color: var(--text-light);
   }
   
