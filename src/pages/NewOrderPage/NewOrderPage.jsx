@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
+// import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
 export default function NewOrderPage({ user, setUser}) {
@@ -14,20 +14,29 @@ export default function NewOrderPage({ user, setUser}) {
     const [activeCat, setActiveCat] = useState('');
     const [cart, setCart] = useState(null);
     const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
-    const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
+    // const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
     const categoriesRef = useRef([]);
     //navigate fx to change routes programmatically
     const navigate = useNavigate();
 
     const toggleLeftSidebar = () => {
-        setIsRightSidebarOpen(false);
+        // setIsRightSidebarOpen(false);
         setIsLeftSidebarOpen(!isLeftSidebarOpen);
     }
     
-    const toggleRightSidebar = () => {
-        setIsLeftSidebarOpen(false);
-        setIsRightSidebarOpen(!isRightSidebarOpen);
-    }
+    // const toggleRightSidebar = () => {
+    //     setIsLeftSidebarOpen(false);
+    //     setIsRightSidebarOpen(!isRightSidebarOpen);
+    // }
+    // useEffect(() => {
+    //     // Prevent horizontal scroll when right sidebar is closed
+    //     document.body.style.overflowX = isRightSidebarOpen ? 'visible' : 'hidden';
+        
+    //     // Cleanup on component unmount
+    //     return () => {
+    //         document.body.style.overflowX = 'visible';
+    //     };
+    // }, [isRightSidebarOpen]);
 
 
     useEffect(function() {
@@ -55,17 +64,19 @@ export default function NewOrderPage({ user, setUser}) {
         const cart = await ordersAPI.addItemToCart(itemId);
         setCart(cart);
     }
+    //taken out because orderdetail was also taken out, adder of current items in cart - will be added in payment page, or cart page.
     async function handleChangeQty(itemId, newQty) {
         const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
         setCart(updatedCart);
     }
+    //orderdetail component taken out, going to be added back in the form of a navbar
     function handleSuccessfulPayment() {
         navigate('/orders');
     }
 
 
     return (
-        <main className={`NewOrderPage ${isLeftSidebarOpen ? 'left-sidebar-open' : ''} ${isRightSidebarOpen ? 'right-sidebar-open' : ''}`}>
+        <main className={`NewOrderPage ${isLeftSidebarOpen ? 'left-sidebar-open' : ''}`}>
             <aside className={`left-sidebar ${isLeftSidebarOpen ? 'left-sidebar-open' : 'left-sidebar-closed'}`}>
                 {/* Arrow Button */}
                 <button 
@@ -90,8 +101,7 @@ export default function NewOrderPage({ user, setUser}) {
                 />
             </section>
         
-            <aside className={`right-sidebar ${isRightSidebarOpen ? 'right-sidebar-open' : 'right-sidebar-closed'}`}>
-                {/* Arrow Button */}
+            {/* <aside className={`right-sidebar ${isRightSidebarOpen ? 'right-sidebar-open' : 'right-sidebar-closed'}`}>
                 <button 
                     className={`arrow-btn arrow-${isRightSidebarOpen ? 'left' : 'right'}`} 
                     onClick={toggleRightSidebar}
@@ -99,7 +109,7 @@ export default function NewOrderPage({ user, setUser}) {
                     {isRightSidebarOpen ? '❯' : '❮'}
                 </button>
                 <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
-            </aside>
+            </aside> */}
         </main>
     )
 }

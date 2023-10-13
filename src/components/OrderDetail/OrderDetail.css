@@ -5,6 +5,7 @@
     padding: 3vmin;
     font-size: 2vmin;
     color: var(--text-light);
+    width: 100%;
   }
   
   .OrderDetail .section-heading {
@@ -17,6 +18,7 @@
     height: calc(100vh - 18vmin);
     width: 100%;
     font-family: var(--app-font);
+    padding: 3vmin;
   }
   
   .OrderDetail .total {

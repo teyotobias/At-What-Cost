@@ -1,4 +1,6 @@
 /* sidebar in-out css */
+
+
 .main-content {
     width: 100%;
     flex-grow: 1;
@@ -9,12 +11,12 @@
 .left-sidebar-closed {
     transform: translateX(-100%);
 }
-.right-sidebar-open {
-    transform: translateX(0);
-}
-.right-sidebar-closed {
+/* .right-sidebar-open {
+    transform: translateX(0%);
+} */
+/* .right-sidebar-closed {
     transform: translateX(100%);
-}
+} */
 .arrow-btn {
     font-size: 24px; /* Adjust size as per requirement */
     position: absolute;
@@ -29,21 +31,25 @@
   
   /* Left Sidebar Arrow */
   .arrow-left {
-    right: -20px; /* Positioning on the right side of the sidebar */
+    right: -10px; /* Positioning on the right side of the sidebar */
   }
   
   /* Right Sidebar Arrow */
-  .arrow-right {
-    left: -20px; /* Positioning on the left side of the sidebar */
-  }
+  /* .arrow-right {
+    left: -10px; 
+  } */
   
   /* Modify CSS for sidebars to accommodate the arrow button */
-  .left-sidebar, .right-sidebar {
+  .left-sidebar {
     position: absolute; /* Ensure the arrow button is positioned relative to the sidebar */
-    width: 25%;
+    width: 25%; 
   }
+  /* .right-sidebar {
+    position: absolute;
+    width: 40%;
+  } */
 
-.left-sidebar-open, .left-sidebar-closed, .right-sidebar-open, .right-sidebar-closed {
+.left-sidebar-open, .left-sidebar-closed {
     transition: transform 0.3s ease-in-out;
   }
 .left-sidebar {
@@ -72,9 +78,9 @@
 }
 
 /* When right sidebar is open */
-.right-sidebar-open .NewOrderPage {
-    grid-template-columns: 3.5fr 3fr;
-}
+/* .right-sidebar-open .NewOrderPage {
+    grid-template-columns: 3.5fr 1.6fr;
+} */
   
 .NewOrderPage aside {
     display: flex;
