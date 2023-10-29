@@ -2,12 +2,11 @@ import './NewOrderPage.css';
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
-import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../../components/Logo/Logo';
+import { useNavigate } from 'react-router-dom';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 // import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import NavBar from '../../components/NavBar/Navbar'
 
 export default function NewOrderPage({ user, setUser}) {
     const [storeItems, setStoreItems] = useState([]);
@@ -24,19 +23,7 @@ export default function NewOrderPage({ user, setUser}) {
         setIsLeftSidebarOpen(!isLeftSidebarOpen);
     }
     
-    // const toggleRightSidebar = () => {
-    //     setIsLeftSidebarOpen(false);
-    //     setIsRightSidebarOpen(!isRightSidebarOpen);
-    // }
-    // useEffect(() => {
-    //     // Prevent horizontal scroll when right sidebar is closed
-    //     document.body.style.overflowX = isRightSidebarOpen ? 'visible' : 'hidden';
-        
-    //     // Cleanup on component unmount
-    //     return () => {
-    //         document.body.style.overflowX = 'visible';
-    //     };
-    // }, [isRightSidebarOpen]);
+
 
 
     useEffect(function() {
@@ -76,40 +63,42 @@ export default function NewOrderPage({ user, setUser}) {
 
 
     return (
-        <main className={`NewOrderPage ${isLeftSidebarOpen ? 'left-sidebar-open' : ''}`}>
-            <aside className={`left-sidebar ${isLeftSidebarOpen ? 'left-sidebar-open' : 'left-sidebar-closed'}`}>
-                {/* Arrow Button */}
-                <button 
-                    className={`arrow-btn arrow-${isLeftSidebarOpen ? 'right' : 'left'}`} 
-                    onClick={toggleLeftSidebar}
-                    >
-                    {isLeftSidebarOpen ? '❮' : '❯'}
-                </button>
-                <Logo />
-                <CategoryList
-                categories={categoriesRef.current}
-                activeCat={activeCat}
-                setActiveCat={setActiveCat}
-                />
-                <Link to="/orders" className="button btn-sm histBtn">PREVIOUS ORDERS</Link>
-                <UserLogOut user={user} setUser={setUser} />
-            </aside>
-            <section className="main-content">
-                <StoreList
-                storeItems={storeItems.filter(item => item.category.name === activeCat)}
-                handleAddToOrder={handleAddToOrder}
-                />
-            </section>
-        
-            {/* <aside className={`right-sidebar ${isRightSidebarOpen ? 'right-sidebar-open' : 'right-sidebar-closed'}`}>
-                <button 
-                    className={`arrow-btn arrow-${isRightSidebarOpen ? 'left' : 'right'}`} 
-                    onClick={toggleRightSidebar}
-                    >
-                    {isRightSidebarOpen ? '❯' : '❮'}
-                </button>
-                <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
-            </aside> */}
-        </main>
+        <>
+            <NavBar user={user} setUser={setUser}/>
+            <main className={`NewOrderPage ${isLeftSidebarOpen ? 'left-sidebar-open' : ''}`}>
+                <aside className={`left-sidebar ${isLeftSidebarOpen ? 'left-sidebar-open' : 'left-sidebar-closed'}`}>
+                    <button 
+                        className={`arrow-btn ${isLeftSidebarOpen ? '' : 'arrow-left'}`} 
+                        onClick={toggleLeftSidebar}
+                        >
+                        {isLeftSidebarOpen ? '❮' : '❯'}
+                    </button>
+                    <CategoryList
+                    categories={categoriesRef.current}
+                    activeCat={activeCat}
+                    setActiveCat={setActiveCat}
+                    />
+                </aside>
+                <section className="main-content">
+                    <StoreList
+                    storeItems={storeItems.filter(item => item.category.name === activeCat)}
+                    handleAddToOrder={handleAddToOrder}
+                    />
+                </section>
+            
+            </main>
+        </>
     )
 }
+
+
+
+{/* <aside className={`right-sidebar ${isRightSidebarOpen ? 'right-sidebar-open' : 'right-sidebar-closed'}`}>
+                    <button 
+                        className={`arrow-btn arrow-${isRightSidebarOpen ? 'left' : 'right'}`} 
+                        onClick={toggleRightSidebar}
+                        >
+                        {isRightSidebarOpen ? '❯' : '❮'}
+                    </button>
+                    <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
+                </aside> */}

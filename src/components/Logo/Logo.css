@@ -1,6 +1,6 @@
 .Logo {
-    height: 17vmin;
-    width: 17vmin;
+    height: 12vmin;
+    width: 12vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,38 +15,6 @@
     object-fit: contain;
 }
 
-@media (max-width: 1800px) {
-    .Logo {
-        height: 14vmin;
-        width: 14vmin;
-    }
-}
-
-@media (max-width: 1300px) {
-    .Logo {
-        height: 12vmin;
-        width: 12vmin;
-    }
-}
-
-@media (max-width: 1000px) {
-    .Logo {
-        height: 11vmin;
-        width: 11vmin;
-    }
-}
-@media (max-width: 768px) {
-    .Logo {
-        height: 10vmin;
-        width: 10vmin;
-    }
-}
-@media (max-width: 480px) {
-    .Logo {
-        height: 8vmin;
-        width: 8vmin;
-    }
-}
 
 
 

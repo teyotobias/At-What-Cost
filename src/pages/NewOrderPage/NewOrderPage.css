@@ -1,27 +1,26 @@
-/* sidebar in-out css */
-
 
 .main-content {
     width: 100%;
     flex-grow: 1;
 }
+
+main {
+    z-index: 1000;
+}
+
+
 .left-sidebar-open {
-    transform: translateX(0);
+    transform: translateX(-2%);
 }
 .left-sidebar-closed {
-    transform: translateX(-100%);
+    transform: translateX(-102%);
 }
-/* .right-sidebar-open {
-    transform: translateX(0%);
-} */
-/* .right-sidebar-closed {
-    transform: translateX(100%);
-} */
+
 .arrow-btn {
     font-size: 24px; /* Adjust size as per requirement */
     position: absolute;
     top: 50%; 
-    z-index: 1000;
+    right: -2%;
     transform: translateY(-50%);
     cursor: pointer;
     background: none; /* No background */
@@ -34,30 +33,19 @@
     right: -10px; /* Positioning on the right side of the sidebar */
   }
   
-  /* Right Sidebar Arrow */
-  /* .arrow-right {
-    left: -10px; 
-  } */
   
   /* Modify CSS for sidebars to accommodate the arrow button */
   .left-sidebar {
-    position: absolute; /* Ensure the arrow button is positioned relative to the sidebar */
+    position: fixed;
+    height: 100%;
     width: 25%; 
   }
-  /* .right-sidebar {
-    position: absolute;
-    width: 40%;
-  } */
+
 
 .left-sidebar-open, .left-sidebar-closed {
     transition: transform 0.3s ease-in-out;
   }
-.left-sidebar {
-    left: 0;
-}
-.right-sidebar {
-    right: 0;
-}
+
 
 .NewOrderPage {
     height: 100%;
@@ -77,10 +65,6 @@
     grid-template-columns: 1.6fr 3.5fr;
 }
 
-/* When right sidebar is open */
-/* .right-sidebar-open .NewOrderPage {
-    grid-template-columns: 3.5fr 1.6fr;
-} */
   
 .NewOrderPage aside {
     display: flex;
@@ -104,53 +88,7 @@ a.histBtn {
 }
 
 
-@media (max-width: 1500px) {
-    .histBtn {
-        height: 5vmin;
-        font-size: 16px !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-}
-/* @media (max-width: 1300px) {
-    .NewOrderPage {
-        grid-template-columns: 1.6fr 5.5fr 1fr;
-    } 
-} */
-@media (max-width: 1200px) {
-    .histBtn {
-        font-size: 14px !important;
-        height: 4vmin;
-        
-    }
-}
-@media (max-width: 1000px) {
-    .histBtn {
-        font-size: 12px !important;
-        
-    }
-}
 
-@media (max-width: 800px) {
-    .histBtn {
-        font-size: 10px !important;
-        
-    }
-}
-@media (max-width: 800px) {
-    .histBtn {
-        font-size: 8px !important;
-        
-    }
-}
-@media (max-width: 500px) {
-    .histBtn {
-        font-size: 6px !important;
-        
-    }
-}
 
 
 

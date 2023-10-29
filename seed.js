@@ -21,6 +21,7 @@ const Item = require('./models/item');
   const items = await Item.create([
     {name: 'Basic White Tee', image: '/images/white-tee.jpg', category: categories[0], price: 14.95},
     {name: 'Graphic Tee', image: '/images/graphic-tee.jpg', category: categories[0], price: 19.95},
+    {name: 'Orange Tee', image: '/images/orange.png', category: categories[0], price: 10.99},
     {name: 'Printed Hoodie', image: '/images/printed-hoodie.jpg', category: categories[1], price: 34.95},
     {name: 'Zip-up Hoodie', image: '/images/zip-up-hoodie.jpg', category: categories[1], price: 39.95},
     {name: 'Leather Jacket', image: '/images/leather-jacket.jpg', category: categories[2], price: 99.95},

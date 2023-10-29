@@ -5,6 +5,8 @@ import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import AuthPage from '../AuthPage/AuthPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import PaymentPage from '../PaymentPage/PaymentPage';
+import AboutPage from '../AboutPage/AboutPage';
+import OrderDetailPage from '../OrderDetailPage/OrderDetailPage';
 // import NavBar from '../../components/NavBar/Navbar';
 import { getUser } from '../../utilities/users-service';
 import { Elements } from "@stripe/react-stripe-js";
@@ -23,6 +25,8 @@ export default function App() {
             <Route path="/orders/new" element={<NewOrderPage user={user} setUser={setUser}/>} />
             <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser}/>} />
             <Route path="/payment" element={<PaymentPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/cart" element={<OrderDetailPage />} />
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
             <Route path="/*" element={<Navigate to="/orders/new" />} />
           </Routes>
