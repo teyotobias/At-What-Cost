@@ -2,21 +2,19 @@ import './NewOrderPage.css';
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
-import { useNavigate } from 'react-router-dom';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 // import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import NavBar from '../../components/NavBar/Navbar'
 
-export default function NewOrderPage({ user, setUser}) {
+export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
-    const [cart, setCart] = useState(null);
+    // const [cart, setCart] = useState(null);
     const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
     // const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
     const categoriesRef = useRef([]);
     //navigate fx to change routes programmatically
-    const navigate = useNavigate();
 
     const toggleLeftSidebar = () => {
         // setIsRightSidebarOpen(false);
@@ -52,14 +50,14 @@ export default function NewOrderPage({ user, setUser}) {
         setCart(cart);
     }
     //taken out because orderdetail was also taken out, adder of current items in cart - will be added in payment page, or cart page.
-    async function handleChangeQty(itemId, newQty) {
-        const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
-        setCart(updatedCart);
-    }
+    // async function handleChangeQty(itemId, newQty) {
+    //     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
+    //     setCart(updatedCart);
+    // }
     //orderdetail component taken out, going to be added back in the form of a navbar
-    function handleSuccessfulPayment() {
-        navigate('/orders');
-    }
+    // function handleSuccessfulPayment() {
+    //     navigate('/orders');
+    // }
 
 
     return (

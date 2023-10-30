@@ -33,7 +33,7 @@ export default function OrderDetail({ order, handleChangeQty, handleSuccessfulPa
         }
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
-      <div className="line-item-container flex-ctr-ctr flex-col scroll-y detail-font">
+      <div className="line-item-container flex-ctr-ctr flex-col detail-font">
         {lineItems.length ?
           <>
             {lineItems}

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import * as userService from '../../utilities/users-service';
 import './NavBar.css';
 import Logo from '../Logo/Logo';
 import UserLogOut from '../UserLogOut/UserLogOut';
@@ -12,7 +11,7 @@ export default function NavBar({user, setUser}) {
             <div className="nav-links">
                 <Link to="/" className="about">About</Link>
                 <Link to="/orders" className="previous-orders">Previous Orders</Link>
-                <Link to="/" className="cart">Cart</Link>
+                <Link to="/cart" className="cart">Cart</Link>
             </div>
             <UserLogOut user={user} setUser={setUser} />  {/* Moved outside of nav-links */}
         </nav>
