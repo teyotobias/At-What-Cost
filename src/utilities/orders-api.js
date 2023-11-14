@@ -2,6 +2,13 @@ import sendRequest from './send-request';
 
 const BASE_URL = '/api/orders';
 
+//NEW: checkout for orders
+export function processCheckout(paymentMethodId, amount) {
+  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', {paymentMethodId, amount});
+}
+
+
+
 // Retrieve an unpaid order for the logged in user
 export function getCart() {
   return sendRequest(`${BASE_URL}/cart`);

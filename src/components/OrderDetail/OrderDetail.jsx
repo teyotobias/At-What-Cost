@@ -2,11 +2,12 @@ import LineItem from '../LineItem/LineItem';
 import './OrderDetail.css';
 import StripeContainer from '../StripeContainer/StripeContainer';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // Used to display the details of any order, including the cart (unpaid order)
-export default function OrderDetail({ order, handleChangeQty, handleSuccessfulPayment }) {
+//handleSuccessFulPayment removed from props
+export default function OrderDetail({ order, handleChangeQty}) {
   const [isCheckingOut, setIsCheckingOut] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   if (!order) return null;
 
@@ -19,8 +20,9 @@ export default function OrderDetail({ order, handleChangeQty, handleSuccessfulPa
     />
   );
   if (isCheckingOut) {
+    console.log("Rendering StripeContainer"); // Add this line for debugging
     const orderTotalInCents = Math.round(order.orderTotal * 100);
-    return <StripeContainer orderTotal={orderTotalInCents} handleSuccessfulPayment={handleSuccessfulPayment}/>
+    return <StripeContainer orderTotal={orderTotalInCents}/> //handleSuccessfulPayment removed from passed props
   }
 
   return (
@@ -44,7 +46,7 @@ export default function OrderDetail({ order, handleChangeQty, handleSuccessfulPa
                 <button
                   className="btn-sm btn-checkout"
                   onClick={() => {
-                    navigate('/payment', { state: { orderTotal: order.orderTotal }});
+                    setIsCheckingOut(true); //navigates: maybe should set isCheckingOut to true instead?
                   }}
                   disabled={!lineItems.length}
                 >CHECKOUT</button>

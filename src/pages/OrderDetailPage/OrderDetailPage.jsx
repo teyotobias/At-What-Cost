@@ -21,9 +21,9 @@ export default function OrderDetailPage({user, setUser, cart, setCart}) {
         setCart(updatedCart);
     }
     //orderdetail component taken out, going to be added back in the form of a navbar
-    function handleSuccessfulPayment() {
-        navigate('/orders');
-    }
+    // function handleSuccessfulPayment() {
+    //     navigate('/orders');
+    // }
 
     const goToNewOrderPage = () => {
         navigate('/orders/new');
@@ -40,7 +40,7 @@ export default function OrderDetailPage({user, setUser, cart, setCart}) {
                 <OrderDetail 
                     order={cart} 
                     handleChangeQty={handleChangeQty} 
-                    handleSuccessfulPayment={handleSuccessfulPayment}
+                    // handleSuccessfulPayment={handleSuccessfulPayment}
                 />
             </div>
         </div>

@@ -51,8 +51,7 @@ module.exports = {
       const { paymentMethodId } = req.body;
       const paymentIntent = await Stripe.paymentIntents.create({
         amount,
-        currency: 'USD',
-        description: "At What Cost LLC",
+        currency: 'usd',
         payment_method: paymentMethodId,
         confirm: true
       });
@@ -68,7 +67,6 @@ module.exports = {
       }
     } catch (error) {
       res.status(500).json({ success: false, message: error.message});
-      console.error("Error during payment processing:", error);
     }
     // const cart = await Order.getCart(req.user._id);
     // cart.isPaid = true;

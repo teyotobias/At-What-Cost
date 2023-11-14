@@ -4,7 +4,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import AuthPage from '../AuthPage/AuthPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-import PaymentPage from '../PaymentPage/PaymentPage';
 import AboutPage from '../AboutPage/AboutPage';
 import OrderDetailPage from '../OrderDetailPage/OrderDetailPage';
 // import NavBar from '../../components/NavBar/Navbar';
@@ -50,7 +49,6 @@ export default function App() {
           <Routes>
             <Route path="/orders/new" element={<NewOrderPage user={user} setUser={setUser} cart={cart} setCart={setCart}/>} />
             <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser}/>} />
-            <Route path="/payment" element={<PaymentPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/cart" element={<OrderDetailPage cart={cart} setCart={setCart} user={user} setUser={setUser}/>} />
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
