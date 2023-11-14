@@ -105,7 +105,7 @@ Current Payment Flow:
     Whenever test card info entered, pay button pressed, app takes you to orderhistory and already has the order there
 
     How can it improve?
-    Need pop ups for "added to cart" and "payment successful, thank you" and things of the sort
+    Need pop ups for 'added to cart' and 'payment successful, thank you' and things of the sort
     Look at guy's video and take account of the code he uses vs yours.
     */
     return (
