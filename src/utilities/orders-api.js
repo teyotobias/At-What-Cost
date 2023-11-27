@@ -2,11 +2,18 @@ import sendRequest from './send-request';
 
 const BASE_URL = '/api/orders';
 
-//NEW: checkout for orders
-export function processCheckout(paymentMethodId, amount) {
-  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', {paymentMethodId, amount});
+
+// export function processCheckout(paymentMethodId, amount) {
+//   return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', {paymentMethodId, amount});
+// }
+
+export function createCheckoutSession(cartId) {
+  return sendRequest(`${BASE_URL}/create-checkout-session`, 'POST', { cartId});
 }
 
+export function verifySession(sessionId) {
+  return sendRequest(`${BASE_URL}/verify-session/${sessionId}`);
+}
 
 
 // Retrieve an unpaid order for the logged in user
@@ -34,7 +41,7 @@ export function getAllForUser() {
   return sendRequest(`${BASE_URL}`);
 }
 
-export function processStripePayment(paymentData) {
-  console.log(paymentData);
-  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', paymentData);
-}
+// export function processStripePayment(paymentData) {
+//   console.log(paymentData);
+//   return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', paymentData);
+// }

@@ -5,9 +5,10 @@ module.exports = {
     cart,
     addToCart,
     setItemQtyInCart,
-    checkout,
-    getAllForUser
-  };
+    getAllForUser,
+    createCheckoutSession,
+    verifySession,
+};
   
   async function getAllForUser(req, res) {
     try {
@@ -40,36 +41,69 @@ module.exports = {
     res.json(cart);
   }
   
-  // Update the cart's isPaid property to true
-  async function checkout(req, res) {
-    console.log(req.body);
+
+
+  // handler to create a checkout session:
+  async function createCheckoutSession(req, res) {
     try {
       const cart = await Order.getCart(req.user._id);
-      //calculate total amt
-      const amount = Math.round(cart.orderTotal * 100);
-      // process payment thru stripe
-      const { paymentMethodId } = req.body;
-      const paymentIntent = await Stripe.paymentIntents.create({
-        amount,
-        currency: 'usd',
-        payment_method: paymentMethodId,
-        confirm: true
-      });
-      //check if payment successful
-      if(paymentIntent.status === 'succeeded') {
-        //update order status in db
-        cart.isPaid = true;
-        await cart.save();
+      if (!cart) throw new Error("Cart not found.");
 
-        res.json({ success: true, cart});
-      } else {
-        res.status(400).json({success: false, message: 'Payment failed'});
-      }
-    } catch (error) {
-      res.status(500).json({ success: false, message: error.message});
+      //Populate the line items in the cart
+      
+      await cart.populate('lineItems.item');
+
+
+      const lineItems = cart.lineItems.map(lineItem => ({
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: lineItem.item.name,
+          },
+          unit_amount: lineItem.item.price * 100
+          },
+          quantity: lineItem.qty,
+      }));
+      const session = await Stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: lineItems,
+        mode: 'payment',
+        success_url: `http://localhost:3000/orders/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `http://localhost:3000/orders/new`,
+        metadata: {
+          cartId: cart._id.toString()
+
+        },
+      });
+      res.json({ url: session.url});
+    } catch(err) {
+      res.status(500).json({error: err.message});
     }
-    // const cart = await Order.getCart(req.user._id);
-    // cart.isPaid = true;
-    // await cart.save(); 
-    // res.json(cart);
   }
+async function verifySession(req, res) {
+  const { sessionId } = req.params;
+
+  try {
+    const session = await Stripe.checkout.sessions.retrieve(sessionId);
+
+    if (session.payment_status === 'paid') {
+      const cartId = session.metadata.cartId;
+      const cart  = await Order.findById(cartId);
+
+      if (!cart) {
+        throw new Error("Cart not found.");
+      }
+      //update cart status
+      cart.isPaid = true;
+      await cart.save();
+      
+      //respond w/ updated cart:
+      res.json({ verified: true, cart });
+    } else {
+      res.json({ verified: false});
+    } 
+  } catch(error) {
+    console.error("Error in verifySession:", error);
+    res.status(400).json({error: error.message });
+  }
+} 

@@ -5,7 +5,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 // import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import NavBar from '../../components/NavBar/Navbar'
+import NavBar from '../../components/NavBar/Navbar';
 
 export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [storeItems, setStoreItems] = useState([]);
@@ -54,10 +54,6 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
     //     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
     //     setCart(updatedCart);
     // }
-    //orderdetail component taken out, going to be added back in the form of a navbar
-    // function handleSuccessfulPayment() {
-    //     navigate('/orders');
-    // }
 
 
     return (
@@ -90,13 +86,3 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
 }
 
 
-
-{/* <aside className={`right-sidebar ${isRightSidebarOpen ? 'right-sidebar-open' : 'right-sidebar-closed'}`}>
-                    <button 
-                        className={`arrow-btn arrow-${isRightSidebarOpen ? 'left' : 'right'}`} 
-                        onClick={toggleRightSidebar}
-                        >
-                        {isRightSidebarOpen ? '❯' : '❮'}
-                    </button>
-                    <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
-                </aside> */}
