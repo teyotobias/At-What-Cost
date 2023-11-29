@@ -7,6 +7,14 @@ import CategoryList from '../../components/CategoryList/CategoryList';
 import NavBar from '../../components/NavBar/Navbar';
 import CustomModal from '../../components/CustomModal/CustomModal';
 
+//sidebar refactor: will likely also require modifications to:
+    //index.css
+    //StoreList.css / jsx
+    //Navbar.css / jsx
+    //StoreList.css / jsx
+    //StoreListItem.css / jsx
+
+
 export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
