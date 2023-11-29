@@ -4,15 +4,14 @@ import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
-// import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import NavBar from '../../components/NavBar/Navbar';
+import CustomModal from '../../components/CustomModal/CustomModal';
 
 export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
-    // const [cart, setCart] = useState(null);
+    const [showModal, setShowModal] = useState(false);
     const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
-    // const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
     const categoriesRef = useRef([]);
     //navigate fx to change routes programmatically
 
@@ -48,12 +47,12 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
         //update cart state w/updated cart from server
         const cart = await ordersAPI.addItemToCart(itemId);
         setCart(cart);
+        setShowModal(true)
     }
-    //taken out because orderdetail was also taken out, adder of current items in cart - will be added in payment page, or cart page.
-    // async function handleChangeQty(itemId, newQty) {
-    //     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
-    //     setCart(updatedCart);
-    // }
+    
+    const handleCloseModal = () => {
+        setShowModal(false);
+    }
 
 
     return (
@@ -79,8 +78,14 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
                     handleAddToOrder={handleAddToOrder}
                     />
                 </section>
-            
             </main>
+            {showModal && (
+                <CustomModal 
+                    message={"Item Added To Cart!"}
+                    onClose={handleCloseModal}
+                    closeMessage={"Continue Shopping"}
+                />
+            )}
         </>
     )
 }

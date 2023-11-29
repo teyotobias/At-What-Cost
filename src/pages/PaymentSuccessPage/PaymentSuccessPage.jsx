@@ -1,12 +1,13 @@
 // PaymentSuccessPage.jsx
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { verifySession } from '../../utilities/orders-api';
-
+import CustomModal from '../../components/CustomModal/CustomModal';
 export default function PaymentSuccessPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get('session_id');
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const verifyPayment = async () => {
@@ -14,16 +15,13 @@ export default function PaymentSuccessPage() {
         try {
           const response = await verifySession(sessionId);
           if (response.verified) {
-            alert('Checkout Successful.');
-            navigate('/orders'); // Navigate to Order History
+            setShowModal(true);
           } else {
-            alert('Checkout Unsuccessful.');
-            navigate('/cart'); // Navigate back to shopping on error
+            navigate('/orders/new');
           }
         } catch (error) {
           console.error('Verification failed: ', error);
-          alert('An error occurred during payment verification');
-          navigate('/cart')
+          navigate('/orders/new')
         }
       }
     };
@@ -31,5 +29,20 @@ export default function PaymentSuccessPage() {
     verifyPayment();
   }, [sessionId, navigate]);
 
-  return <div>Verifying your payment...</div>;
+  return (
+    <div>
+      Verifying your payment...
+      {showModal && (
+        <CustomModal
+          message="Payment Successful!"
+          onClose={() => {
+            setShowModal(false); // Hide modal on close
+            navigate('/orders'); // Navigate to Order History
+          }}
+          closeMessage="Order History"
+        />
+      )}
+    </div>
+  );
+
 }
