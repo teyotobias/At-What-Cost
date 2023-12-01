@@ -38,7 +38,7 @@ export default function OrderHistoryPage({ user, setUser }) {
         setActiveOrder={setActiveOrder}
       />
       {/* Render the existing OrderDetail component */}
-      <OrderDetail order={activeOrder} />
+      <OrderDetail order={activeOrder} isCartPage={false} />
     </main>
   );
 }

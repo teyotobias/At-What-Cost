@@ -13,12 +13,11 @@
   }
   
   .OrderDetail .line-item-container {
-    margin-top: 3vmin;
     justify-content: flex-start;
     height: calc(100vh - 18vmin);
     width: 100%;
     font-family: var(--app-font);
-    padding: 3vmin;
+    padding: 1vmin;
   }
   
   .OrderDetail .total {
@@ -40,7 +39,8 @@
   
   .OrderDetail .total span.right {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-top: 1vmin;
   }
   
   .OrderDetail .hungry {

@@ -4,7 +4,6 @@ import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import NavBar from '../../components/NavBar/Navbar';
 import CustomModal from '../../components/CustomModal/CustomModal';
 
 //sidebar refactor: will likely also require modifications to:
@@ -65,7 +64,6 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
 
     return (
         <>
-            <NavBar user={user} setUser={setUser}/>
             <main className={`NewOrderPage ${isLeftSidebarOpen ? 'left-sidebar-open' : ''}`}>
                 <aside className={`left-sidebar ${isLeftSidebarOpen ? 'left-sidebar-open' : 'left-sidebar-closed'}`}>
                     <button 
