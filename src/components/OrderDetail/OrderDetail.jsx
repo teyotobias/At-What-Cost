@@ -2,6 +2,7 @@ import LineItem from '../LineItem/LineItem';
 import './OrderDetail.css';
 import { createCheckoutSession } from '../../utilities/orders-api';
 
+//OrderDetail component - props: order, function to change qty, flag for cart page
 export default function OrderDetail({ order, handleChangeQty, isCartPage}) {
 
   const handleCheckout = async () => {
