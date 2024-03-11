@@ -13,4 +13,6 @@
     font-family: var(--app-font);
     border-radius: 200px;
     background-color: rgb(60,60,60)!important;
+    margin-bottom: 6px;
+    padding: 3px;
   }

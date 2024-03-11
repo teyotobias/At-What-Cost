@@ -5,6 +5,7 @@
     padding: 3vmin;
     font-size: 2vmin;
     color: var(--text-light);
+    /* width: 100%; */
   }
   
   .OrderDetail .section-heading {
@@ -12,11 +13,11 @@
   }
   
   .OrderDetail .line-item-container {
-    margin-top: 3vmin;
     justify-content: flex-start;
     height: calc(100vh - 18vmin);
     width: 100%;
     font-family: var(--app-font);
+    padding: 1vmin;
   }
   
   .OrderDetail .total {
@@ -26,6 +27,7 @@
     padding: 1vmin 0;
     color: var(--text-light);
     border-top: .1vmin solid var(--tan-3);
+    padding-top: 2vmin;
   }
   
   .OrderDetail .total span {
@@ -38,7 +40,8 @@
   
   .OrderDetail .total span.right {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-top: 1vmin;
   }
   
   .OrderDetail .hungry {
@@ -51,3 +54,4 @@
     font-family: var(--app-font);
     border-radius: 20px;
   }
+

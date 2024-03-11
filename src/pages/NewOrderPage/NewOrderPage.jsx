@@ -2,20 +2,32 @@ import './NewOrderPage.css';
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
-import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../../components/Logo/Logo';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import CustomModal from '../../components/CustomModal/CustomModal';
 
-export default function NewOrderPage({ user, setUser}) {
+//sidebar refactor: will likely also require modifications to:
+    //index.css
+    //StoreList.css / jsx
+    //Navbar.css / jsx
+    //StoreList.css / jsx
+    //StoreListItem.css / jsx
+
+
+export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
-    const [cart, setCart] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
     const categoriesRef = useRef([]);
     //navigate fx to change routes programmatically
-    const navigate = useNavigate();
+
+    const toggleLeftSidebar = () => {
+        // setIsRightSidebarOpen(false);
+        setIsLeftSidebarOpen(!isLeftSidebarOpen);
+    }
+    
+
 
 
     useEffect(function() {
@@ -42,33 +54,46 @@ export default function NewOrderPage({ user, setUser}) {
         //update cart state w/updated cart from server
         const cart = await ordersAPI.addItemToCart(itemId);
         setCart(cart);
+        setShowModal(true)
     }
-    async function handleChangeQty(itemId, newQty) {
-        const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
-        setCart(updatedCart);
-    }
-    function handleSuccessfulPayment() {
-        navigate('/orders');
+    
+    const handleCloseModal = () => {
+        setShowModal(false);
     }
 
 
     return (
-        <main className="NewOrderPage">
-            <aside>
-                <Logo />
-                <CategoryList
-                categories={categoriesRef.current}
-                activeCat={activeCat}
-                setActiveCat={setActiveCat}
+        <>
+            <main className={`NewOrderPage ${isLeftSidebarOpen ? 'left-sidebar-open' : ''}`}>
+                <aside className={`left-sidebar ${isLeftSidebarOpen ? 'left-sidebar-open' : 'left-sidebar-closed'}`}>
+                    <button 
+                        className={`arrow-btn ${isLeftSidebarOpen ? '' : 'arrow-left'}`} 
+                        onClick={toggleLeftSidebar}
+                        >
+                        {isLeftSidebarOpen ? '❮' : '❯'}
+                    </button>
+                    <CategoryList
+                    categories={categoriesRef.current}
+                    activeCat={activeCat}
+                    setActiveCat={setActiveCat}
+                    />
+                </aside>
+                <section className="main-content">
+                    <StoreList
+                    storeItems={storeItems.filter(item => item.category.name === activeCat)}
+                    handleAddToOrder={handleAddToOrder}
+                    />
+                </section>
+            </main>
+            {showModal && (
+                <CustomModal 
+                    message={"Item Added To Cart!"}
+                    onClose={handleCloseModal}
+                    closeMessage={"Continue Shopping"}
                 />
-                <Link to="/orders" className="button btn-sm histBtn">PREVIOUS ORDERS</Link>
-                <UserLogOut user={user} setUser={setUser} />
-            </aside>
-            <StoreList
-                storeItems={storeItems.filter(item => item.category.name === activeCat)}
-                handleAddToOrder={handleAddToOrder}
-            />
-            <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
-        </main>
+            )}
+        </>
     )
 }
+
+

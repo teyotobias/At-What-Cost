@@ -12,6 +12,9 @@ export default function OrderHistoryPage({ user, setUser }) {
   const [orders, setOrders] = useState([]);
   const [activeOrder, setActiveOrder] = useState(null);
 
+
+
+
   useEffect(function() {
     async function getOrders() {
       const orders = await ordersAPI.getAllForUser();
@@ -25,7 +28,7 @@ export default function OrderHistoryPage({ user, setUser }) {
     <main className="OrderHistoryPage">
       <aside>
         <Logo />
-        <Link to="/orders/new" className="button btn-sm">NEW ORDER</Link>
+        <Link to="/orders/new" className="button btn-sm btn-new">NEW ORDER</Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
       {/* Render an OrderList component (needs to be coded) */}
@@ -34,8 +37,8 @@ export default function OrderHistoryPage({ user, setUser }) {
         activeOrder={activeOrder}
         setActiveOrder={setActiveOrder}
       />
-      {/* Render the existing OrderDetail component */}
-      <OrderDetail order={activeOrder} />
+      {/* Render existing OrderDetail component */}
+      <OrderDetail order={activeOrder} isCartPage={false} />
     </main>
   );
 }
