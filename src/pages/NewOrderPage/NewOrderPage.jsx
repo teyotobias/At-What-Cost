@@ -2,20 +2,32 @@ import './NewOrderPage.css';
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
-import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../../components/Logo/Logo';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import CustomModal from '../../components/CustomModal/CustomModal';
 
-export default function NewOrderPage({ user, setUser}) {
+//sidebar refactor: will likely also require modifications to:
+    //index.css
+    //StoreList.css / jsx
+    //Navbar.css / jsx
+    //StoreList.css / jsx
+    //StoreListItem.css / jsx
+
+
+export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
-    const [cart, setCart] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const categoriesRef = useRef([]);
     //navigate fx to change routes programmatically
-    const navigate = useNavigate();
+
+    const toggleSidebar = () => {
+        // setIsRightSidebarOpen(false);
+        setIsSidebarOpen(!isSidebarOpen);
+    }
+    
+
 
 
     useEffect(function() {
@@ -42,33 +54,44 @@ export default function NewOrderPage({ user, setUser}) {
         //update cart state w/updated cart from server
         const cart = await ordersAPI.addItemToCart(itemId);
         setCart(cart);
+        setShowModal(true)
     }
-    async function handleChangeQty(itemId, newQty) {
-        const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
-        setCart(updatedCart);
-    }
-    function handleSuccessfulPayment() {
-        navigate('/orders');
+    
+    const handleCloseModal = () => {
+        setShowModal(false);
     }
 
 
     return (
-        <main className="NewOrderPage">
-            <aside>
-                <Logo />
+        <>
+        <div className="page-container">
+            <button className="sidebar-toggle" onClick={toggleSidebar}>
+                {isSidebarOpen ? '❮' : '❯'}
+            </button>
+            <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                <div className="sidebarLogo">
+                    <img src="/images/brandlogo.png" alt="Brand Logo" />
+                </div>
                 <CategoryList
-                categories={categoriesRef.current}
-                activeCat={activeCat}
-                setActiveCat={setActiveCat}
+                    categories={categoriesRef.current}
+                    activeCat={activeCat}
+                    setActiveCat={setActiveCat}
                 />
-                <Link to="/orders" className="button btn-sm histBtn">PREVIOUS ORDERS</Link>
-                <UserLogOut user={user} setUser={setUser} />
             </aside>
-            <StoreList
-                storeItems={storeItems.filter(item => item.category.name === activeCat)}
-                handleAddToOrder={handleAddToOrder}
-            />
-            <OrderDetail order={cart} handleChangeQty={handleChangeQty} handleSuccessfulPayment={handleSuccessfulPayment}/>
-        </main>
+            <section className="main-content">
+                <StoreList
+                    storeItems={storeItems.filter(item => item.category.name === activeCat)}
+                    handleAddToOrder={handleAddToOrder}
+                />
+            </section>
+        </div>
+        {showModal && (
+                <CustomModal 
+                    message={"Added To Cart!"}
+                    onClose={handleCloseModal}
+                    closeMessage={"Continue Shopping"}
+                />
+            )}
+        </>
     )
 }

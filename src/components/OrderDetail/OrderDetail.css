@@ -5,14 +5,16 @@
     padding: 3vmin;
     font-size: 2vmin;
     color: var(--text-light);
+    border-radius: 2vmin;
+    /* width: 100%; */
   }
   
   .OrderDetail .section-heading {
-    width: 100%
+    width: 100%;
+    background-color: rgb(240,240,240, .8);
   }
   
   .OrderDetail .line-item-container {
-    margin-top: 3vmin;
     justify-content: flex-start;
     height: calc(100vh - 18vmin);
     width: 100%;
@@ -21,11 +23,15 @@
   
   .OrderDetail .total {
     width: 100%;
-    display: grid;
-    grid-template-columns: 18.35vw 5.75vw 5.25vw;
+    display: flex;
+    justify-content: flex-end;
     padding: 1vmin 0;
     color: var(--text-light);
-    border-top: .1vmin solid var(--tan-3);
+    border-top: .3vmin rgb(210,210,210, .8);
+    background-color: rgb(240,240,240,.8);
+    margin-bottom: 1vmin;
+    border-bottom-right-radius: 2vmin;
+    border-bottom-left-radius: 2vmin;
   }
   
   .OrderDetail .total span {
@@ -38,7 +44,9 @@
   
   .OrderDetail .total span.right {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-top: 1vmin;
+    padding: 1vmin;
   }
   
   .OrderDetail .hungry {

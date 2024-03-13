@@ -1,82 +1,48 @@
-.NewOrderPage {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1.6fr 3.5fr 3fr;
-    grid-template-rows: 1fr;
+.page-container {
+    position: relative;
     background-color: var(--white);
-    border-radius: 2vmin;
-    margin-bottom: 0px;
+    
 }
-  
-.NewOrderPage aside {
+.sidebar-toggle {
+    font-size: 24px; 
+    position: fixed;
+    top: 50%;
+    left: .5%;
+    z-index: 1100;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none; 
+    border: none; 
+    color: #555; 
+}
+.sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 3vmin 2vmin;
     background-color: var(--white);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 23.5vw;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 3vmin;
+}
+.sidebar.open {
+    transform: translateX(0);
+}
+.sidebarLogo {
+    width: 12vmin;
+    height: 12vmin;
+    border-radius: 50%;
+}
+.main-content {
+    width: 100%;
 }
 
-a.histBtn {
-    font-family: var(--app-font);
-    border-radius: 200px !important;
-    background-color: rgb(60,60,60)!important;
-    margin-top: 0 !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 4%;
-    padding: 7px !important;
-}
-
-
-@media (max-width: 1500px) {
-    .histBtn {
-        height: 5vmin;
-        font-size: 16px !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-}
-/* @media (max-width: 1300px) {
-    .NewOrderPage {
-        grid-template-columns: 1.6fr 5.5fr 1fr;
-    } 
-} */
-@media (max-width: 1200px) {
-    .histBtn {
-        font-size: 14px !important;
-        height: 4vmin;
-        
-    }
-}
-@media (max-width: 1000px) {
-    .histBtn {
-        font-size: 12px !important;
-        
-    }
-}
-
-@media (max-width: 800px) {
-    .histBtn {
-        font-size: 10px !important;
-        
-    }
-}
-@media (max-width: 800px) {
-    .histBtn {
-        font-size: 8px !important;
-        
-    }
-}
-@media (max-width: 500px) {
-    .histBtn {
-        font-size: 6px !important;
-        
-    }
-}
 
 
 
