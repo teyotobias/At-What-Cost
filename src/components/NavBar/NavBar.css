@@ -3,11 +3,21 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 0.5rem 1rem;
+    padding: 5vmin;
     height: 10%;
     font-size: 3vmin;
 }
-
+.navbarLogo {
+    height: 13vmin;
+    width: 13vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 2.7vmin;
+    padding: 1vmin;
+}
 
 .nav-links {
     display: flex;

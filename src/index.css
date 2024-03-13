@@ -25,8 +25,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--white);
-  padding: 2vmin;
   height: 100vh;
+  padding: 2vmin;
 }
 
 code {
@@ -83,13 +83,13 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  background-color: rgb(240,240,240,0.8);
+  border: .1vmin solid rgb(240,240,240);
   border-radius: 1vmin;
 }
 
 p.error-message {
-  color: var(--orange);
+  color: rgb(240,240,240,0.8);
   text-align: center;
 }
 
@@ -109,7 +109,7 @@ label {
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid rgb(240,240,240,0.8);
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; 
@@ -117,7 +117,7 @@ input {
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: black;
 }
 
 button, a.button {
@@ -129,7 +129,7 @@ button, a.button {
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
+  border: .1vmin solid rgb(240,240,240,0.8);
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
@@ -147,7 +147,8 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: rgb(220,220,220);
+  color: white;
 }
 
 button[type="submit"] {

@@ -5,6 +5,7 @@
     padding: 3vmin;
     font-size: 2vmin;
     color: var(--text-light);
+    border-radius: 2vmin;
     /* width: 100%; */
   }
   
@@ -22,13 +23,15 @@
   
   .OrderDetail .total {
     width: 100%;
-    display: grid;
-    grid-template-columns: 18.35vw 5.75vw 5.25vw;
+    display: flex;
+    justify-content: flex-end;
     padding: 1vmin 0;
     color: var(--text-light);
-    border-top: .1vmin rgb(230,230,230, .8);
+    border-top: .3vmin rgb(210,210,210, .8);
     background-color: rgb(240,240,240,.8);
-    padding-top: 2vmin;
+    margin-bottom: 1vmin;
+    border-bottom-right-radius: 2vmin;
+    border-bottom-left-radius: 2vmin;
   }
   
   .OrderDetail .total span {
@@ -43,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1vmin;
+    padding: 1vmin;
   }
   
   .OrderDetail .hungry {

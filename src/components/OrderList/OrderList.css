@@ -10,9 +10,8 @@
     overflow-y: scroll;
 }
   
-.OrderList .no-orders {
-    color: rgb(240,240,240, .8);
+p {
+    color: black;
     font-size: 2vmin;
-    position: absolute;
-    top: calc(50vh);
+    font-family: var(--app-font);
 }
