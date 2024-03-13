@@ -9,7 +9,7 @@ export default function NavBar({user, setUser}) {
         <nav className="navbar">
             <Logo />
             <div className="nav-links">
-                <Link to="/" className="about">About</Link>
+                <Link to="/" className="about">Shop</Link>
                 <Link to="/orders" className="previous-orders">Previous Orders</Link>
                 <Link to="/cart" className="cart">Cart</Link>
             </div>

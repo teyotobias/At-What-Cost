@@ -27,7 +27,9 @@ export default function OrderHistoryPage({ user, setUser }) {
   return (
     <main className="OrderHistoryPage">
       <aside>
-        <Logo />
+        <div className="sidebarLogo">
+          <img src="/images/brandlogo.png" alt="Brand Logo" />
+        </div>
         <Link to="/orders/new" className="button btn-sm btn-new">NEW ORDER</Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>

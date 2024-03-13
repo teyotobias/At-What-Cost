@@ -19,7 +19,8 @@ const Item = require('./models/item');
 
   await Item.deleteMany({});
   const items = await Item.create([
-    {name: 'Basic White Tee', image: '/images/white-tee.jpg', category: categories[0], price: 14.95},
+    {name: 'Basic Gray Tee', image: '/images/gray-tee.jpg', category: categories[0], price: 14.95},
+    {name: 'Basic Black Tee', image: '/images/black-tee.jpg', category: categories[0], price: 14.95},
     {name: 'Graphic Tee', image: '/images/graphic-tee.jpg', category: categories[0], price: 19.95},
     {name: 'Printed Hoodie', image: '/images/printed-hoodie.jpg', category: categories[1], price: 34.95},
     {name: 'Zip-up Hoodie', image: '/images/zip-up-hoodie.jpg', category: categories[1], price: 39.95},

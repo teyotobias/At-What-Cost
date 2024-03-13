@@ -18,13 +18,13 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
     const [showModal, setShowModal] = useState(false);
-    const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const categoriesRef = useRef([]);
     //navigate fx to change routes programmatically
 
-    const toggleLeftSidebar = () => {
+    const toggleSidebar = () => {
         // setIsRightSidebarOpen(false);
-        setIsLeftSidebarOpen(!isLeftSidebarOpen);
+        setIsSidebarOpen(!isSidebarOpen);
     }
     
 
@@ -64,30 +64,30 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
 
     return (
         <>
-            <main className={`NewOrderPage ${isLeftSidebarOpen ? 'left-sidebar-open' : ''}`}>
-                <aside className={`left-sidebar ${isLeftSidebarOpen ? 'left-sidebar-open' : 'left-sidebar-closed'}`}>
-                    <button 
-                        className={`arrow-btn ${isLeftSidebarOpen ? '' : 'arrow-left'}`} 
-                        onClick={toggleLeftSidebar}
-                        >
-                        {isLeftSidebarOpen ? '❮' : '❯'}
-                    </button>
-                    <CategoryList
+        <div className="page-container">
+            <button className="sidebar-toggle" onClick={toggleSidebar}>
+                {isSidebarOpen ? '❮' : '❯'}
+            </button>
+            <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                <div className="sidebarLogo">
+                    <img src="/images/brandlogo.png" alt="Brand Logo" />
+                </div>
+                <CategoryList
                     categories={categoriesRef.current}
                     activeCat={activeCat}
                     setActiveCat={setActiveCat}
-                    />
-                </aside>
-                <section className="main-content">
-                    <StoreList
+                />
+            </aside>
+            <section className="main-content">
+                <StoreList
                     storeItems={storeItems.filter(item => item.category.name === activeCat)}
                     handleAddToOrder={handleAddToOrder}
-                    />
-                </section>
-            </main>
-            {showModal && (
+                />
+            </section>
+        </div>
+        {showModal && (
                 <CustomModal 
-                    message={"Item Added To Cart!"}
+                    message={"Added To Cart!"}
                     onClose={handleCloseModal}
                     closeMessage={"Continue Shopping"}
                 />
@@ -95,5 +95,3 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
         </>
     )
 }
-
-

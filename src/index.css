@@ -72,9 +72,9 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--tan-1);
+  background-color: rgb(230,230,230, .5);
   color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
+  background-color: rgb(230,230,230);
   border-radius: 1vmin;
   padding: .6vmin;
   text-align: center;
