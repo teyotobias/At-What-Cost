@@ -6,12 +6,7 @@ import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import CustomModal from '../../components/CustomModal/CustomModal';
 
-//sidebar refactor: will likely also require modifications to:
-    //index.css
-    //StoreList.css / jsx
-    //Navbar.css / jsx
-    //StoreList.css / jsx
-    //StoreListItem.css / jsx
+
 
 
 export default function NewOrderPage({ user, setUser, cart, setCart}) {
@@ -20,10 +15,9 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [showModal, setShowModal] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const categoriesRef = useRef([]);
-    //navigate fx to change routes programmatically
+
 
     const toggleSidebar = () => {
-        // setIsRightSidebarOpen(false);
         setIsSidebarOpen(!isSidebarOpen);
     }
     

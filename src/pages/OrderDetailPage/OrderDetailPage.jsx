@@ -19,11 +19,6 @@ export default function OrderDetailPage({user, setUser, cart, setCart}) {
     }
 
 
-
-
-//redo whole new order page
-//current format is a good starting point
-//detach checkout button
     return (
             <div className="OrderDetailPage">
                 <OrderDetail 

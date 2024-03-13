@@ -1,10 +1,8 @@
 .StoreList {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Four items per row */
-    gap: 20px; /* Gap between columns */
-    /* margin: 0vmin 50vmin 0vmin 50vmin; */
+    gap: 20px; 
     padding: 0 6vmin 6vmin 6vmin;
-    /* grid-auto-rows: calc(66.67vmin * 3 / 2); */
     max-height: (100vh - 10%);
     overflow-y: auto; 
     margin: 20px auto;

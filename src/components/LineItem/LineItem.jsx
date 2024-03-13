@@ -8,10 +8,6 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty, isCartPage
           <div className="emoji">
             <img src={lineItem.item.image} alt={lineItem.item.name} />
           </div>
-          {/* <div className="flex-ctr-ctr flex-col">
-            <span className="align-ctr margin-left">{lineItem.item.name}</span>
-            <span>{lineItem.item.price.toFixed(2)}</span>
-          </div> */}
         </div>
 
       ) : (
