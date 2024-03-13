@@ -1,93 +1,47 @@
-
-.main-content {
-    width: 100%;
-    flex-grow: 1;
+.page-container {
+    position: relative;
+    background-color: var(--white);
+    
 }
-
-main {
-    z-index: 1000;
-}
-
-
-.left-sidebar-open {
-    transform: translateX(-2%);
-}
-.left-sidebar-closed {
-    transform: translateX(-102%);
-}
-
-.arrow-btn {
-    font-size: 24px; /* Adjust size as per requirement */
-    position: absolute;
-    top: 50%; 
-    right: -2%;
+.sidebar-toggle {
+    font-size: 24px; 
+    position: fixed;
+    top: 50%;
+    left: .5%;
+    z-index: 1100;
     transform: translateY(-50%);
     cursor: pointer;
-    background: none; /* No background */
-    border: none; /* No border */
-    color: #555; /* Adjust color as per requirement */
+    background: none; 
+    border: none; 
+    color: #555; 
 }
-  
-  /* Left Sidebar Arrow */
-  .arrow-left {
-    right: -10px; /* Positioning on the right side of the sidebar */
-  }
-  
-  
-  /* Modify CSS for sidebars to accommodate the arrow button */
-  .left-sidebar {
-    position: fixed;
-    height: 100%;
-    width: 25%; 
-  }
-
-
-.left-sidebar-open, .left-sidebar-closed {
-    transition: transform 0.3s ease-in-out;
-  }
-
-
-.NewOrderPage {
-    height: 100%;
-    display: flex;
-    position: relative;
-    grid-template-rows: 1fr;
-    background-color: var(--white);
-    border-radius: 2vmin;
-    margin-bottom: 0px;
-}
-.no-sidebar {
-    grid-template-columns: 1fr;
-}
-
-/* When left sidebar is open */
-.left-sidebar-open .NewOrderPage {
-    grid-template-columns: 1.6fr 3.5fr;
-}
-
-  
-.NewOrderPage aside {
+.sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 3vmin 2vmin;
     background-color: var(--white);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 23.5vw;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 3vmin;
 }
-
-a.histBtn {
-    font-family: var(--app-font);
-    border-radius: 200px !important;
-    background-color: rgb(60,60,60)!important;
-    margin-top: 0 !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 4%;
-    padding: 7px !important;
+.sidebar.open {
+    transform: translateX(0);
 }
-
-
+.sidebarLogo {
+    width: 12vmin;
+    height: 12vmin;
+    border-radius: 50%;
+}
+.main-content {
+    width: 100%;
+}
 
 
 

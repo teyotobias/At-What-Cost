@@ -3,16 +3,15 @@ import './LineItem.css';
 export default function LineItem({ lineItem, isPaid, handleChangeQty, isCartPage }) {
   return (
     <div className="LineItem" style={!isCartPage ? {gridTemplateColumns: '3vw 15.35vw 5.75vw 5.25vw', height: 'auto' }: {}}>
-      {/* CHANGES WILL BE HERE */}
       { isCartPage ? (
         <div class="itemContainer">
           <div className="emoji">
             <img src={lineItem.item.image} alt={lineItem.item.name} />
           </div>
-          <div className="flex-ctr-ctr flex-col">
+          {/* <div className="flex-ctr-ctr flex-col">
             <span className="align-ctr margin-left">{lineItem.item.name}</span>
             <span>{lineItem.item.price.toFixed(2)}</span>
-          </div>
+          </div> */}
         </div>
 
       ) : (
@@ -26,18 +25,6 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty, isCartPage
         </div>
         </>
       )}
-      {/* <div class="itemContainer">
-        <div className="emoji">
-          <img src={lineItem.item.image} alt={lineItem.item.name} />
-        </div>
-        <div className="flex-ctr-ctr flex-col">
-          <span className="align-ctr margin-left">{lineItem.item.name}</span>
-          <span>{lineItem.item.price.toFixed(2)}</span>
-        </div>
-      </div> */}
-      {/* TO HERE */}
-
-      {/* AND HERE */}
       <div className="qty" style={!isCartPage? { justifyContent: 'center'}: {}}>
         {isCartPage &&
           <button
@@ -53,7 +40,6 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty, isCartPage
           >+</button>
         }
       </div>
-      {/* TO HERE */}
 
       <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div> 
     </div>

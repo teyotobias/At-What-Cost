@@ -1,12 +1,14 @@
 .LineItem {
     width: 100%;
     /* height: 100%; */
-    display: grid;
-    grid-template-columns: 29vw 32vw 18vw 14vw;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    /* grid-template-columns: 29vw 32vw 18vw 14vw; */
     padding: 1vmin 0;
     color: var(--text-light);
-    background-color: var(--white);
-    border-bottom: .1vmin solid var(--tan-3);
+    background-color: rgb(240,240,240,.8);
+    border-bottom: .1vmin solid rgb(230,230,230);
     font-size: 1.5vw;
 }
 .LineItem .itemContainer {
@@ -19,9 +21,9 @@
 .margin-left {
     margin-left: 1.5vmin;
 }
-.more-marginLeft {
+/* .more-marginLeft {
     margin-left: 17vmin;
-}
+} */
 
 
 .LineItem:last-child {
@@ -53,7 +55,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 5vmin;
     font-size: 1.3vw;
 }
 
@@ -69,5 +70,5 @@
 }
 
 .itemqty {
-    padding: 5vmin;
+    padding: 3vmin;
 }

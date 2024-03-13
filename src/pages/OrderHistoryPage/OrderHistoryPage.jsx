@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './OrderHistoryPage.css';
 import * as ordersAPI from '../../utilities/orders-api';
-import Logo from '../../components/Logo/Logo';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import OrderList from '../../components/OrderList/OrderList';
@@ -27,17 +26,17 @@ export default function OrderHistoryPage({ user, setUser }) {
   return (
     <main className="OrderHistoryPage">
       <aside>
-        <Logo />
+        <div className="sidebarLogo">
+          <img src="/images/brandlogo.png" alt="Brand Logo" />
+        </div>
         <Link to="/orders/new" className="button btn-sm btn-new">NEW ORDER</Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
-      {/* Render an OrderList component (needs to be coded) */}
       <OrderList
         orders={orders}
         activeOrder={activeOrder}
         setActiveOrder={setActiveOrder}
       />
-      {/* Render existing OrderDetail component */}
       <OrderDetail order={activeOrder} isCartPage={false} />
     </main>
   );
