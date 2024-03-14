@@ -3,6 +3,7 @@ import './NavBar.css';
 import UserLogOut from '../UserLogOut/UserLogOut';
 export default function NavBar({user, setUser}) {
 
+    
 
     return (
         <nav className="navbar">
