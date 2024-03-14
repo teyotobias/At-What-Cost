@@ -2,10 +2,10 @@ import './LineItem.css';
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty, isCartPage }) {
   return (
-    <div className="LineItem" style={!isCartPage ? {gridTemplateColumns: '3vw 15.35vw 5.75vw 5.25vw', height: 'auto' }: {}}>
+    <div className="LineItem" style={!isCartPage ? {gridTemplateColumns: '3vw 15.35vw 5.75vw 5.25vw', height: 'auto' }: {height: '20vmin'}}>
       { isCartPage ? (
         <div class="itemContainer">
-          <div className="emoji">
+          <div className="emoji" style={isCartPage ? {height: '100%', width: '100%'}: {}}>
             <img src={lineItem.item.image} alt={lineItem.item.name} />
           </div>
         </div>

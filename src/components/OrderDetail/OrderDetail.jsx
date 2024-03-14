@@ -35,9 +35,9 @@ export default function OrderDetail({ order, handleChangeQty, isCartPage}) {
           </>
           :
           <>
-          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ITEM</span>
-          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QTY</span>
-          <span>PRICE</span>
+          <span class="spanItem">&nbsp;&nbsp;&nbsp;ITEM</span>
+          <span class="spanItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QTY</span>
+          <span class="spanItem">PRICE</span>
           </>
         }
       </div>

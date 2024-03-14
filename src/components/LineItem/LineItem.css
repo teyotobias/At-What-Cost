@@ -1,3 +1,4 @@
+/* height to 20vmin for cart */
 .LineItem {
     width: 100%;
     display: flex;
@@ -26,7 +27,7 @@
     border-bottom: .1vmin solid var(--tan-3);
 }
 
-
+/* to 100% for both w, h in cart */
 .LineItem .emoji {
     width: 80px;
     height: 80px;
@@ -41,6 +42,7 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    object-position: center;
     
 }
 
@@ -65,4 +67,50 @@
 
 .itemqty {
     padding: 3vmin;
+}
+
+@media (max-width: 800px) {
+    .LineItem {
+      height: 15vmin !important;
+    }
+    .LineItem .emoji {
+        width:  70px;
+        height: 70px;
+    }
+}
+@media (max-width: 600px) {
+    .LineItem {
+      height: 15vmin !important;
+    }
+    .LineItem .emoji {
+        width:  60px;
+        height: 60px;
+    }
+}
+@media (max-width: 400px) {
+    .LineItem {
+      height: 15vmin !important;
+    }
+    .LineItem .emoji {
+        width:  50px;
+        height: 50px;
+    }
+}
+@media (max-width: 350px) {
+    .LineItem {
+      height: 15vmin !important;
+    }
+    .LineItem .emoji {
+        width:  40px;
+        height: 40px;
+    }
+}
+@media (max-width: 275px) {
+    .LineItem {
+      height: 15vmin !important;
+    }
+    .LineItem .emoji {
+        width:  30px;
+        height: 30px;
+    }
 }

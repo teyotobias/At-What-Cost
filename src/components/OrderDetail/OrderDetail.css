@@ -60,3 +60,28 @@
     border-radius: 20px;
   }
 
+
+  @media (max-width: 1200px) {
+    .spanItem {
+      margin-left: 4vmin;
+    }
+  }
+  @media (max-width: 1000px) {
+    .spanItem {
+      margin-left: 6vmin;
+    }
+  }
+  @media (max-width: 800px) {
+    .spanItem {
+      margin-left: 4vmin;
+    }
+  }
+  @media (max-width: 500px) {
+    .spanItem {
+      margin-left: 3vmin;
+    }
+  }
+
+
+  
+
