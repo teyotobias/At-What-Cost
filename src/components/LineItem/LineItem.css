@@ -29,8 +29,8 @@
 
 /* to 100% for both w, h in cart */
 .LineItem .emoji {
-    width: 80px;
-    height: 80px;
+    width: 15vmin;
+    height: 15vmin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,47 +70,23 @@
 }
 
 @media (max-width: 800px) {
-    .LineItem {
-      height: 15vmin !important;
-    }
+
     .LineItem .emoji {
-        width:  70px;
-        height: 70px;
+        width: 10vmin;
+        height: 10vmin;
     }
 }
-@media (max-width: 600px) {
-    .LineItem {
-      height: 15vmin !important;
-    }
+@media (max-width: 500px) {
+
     .LineItem .emoji {
-        width:  60px;
-        height: 60px;
+        width:  8vmin;
+        height: 8vmin;
     }
 }
 @media (max-width: 400px) {
-    .LineItem {
-      height: 15vmin !important;
-    }
+
     .LineItem .emoji {
-        width:  50px;
-        height: 50px;
-    }
-}
-@media (max-width: 350px) {
-    .LineItem {
-      height: 15vmin !important;
-    }
-    .LineItem .emoji {
-        width:  40px;
-        height: 40px;
-    }
-}
-@media (max-width: 275px) {
-    .LineItem {
-      height: 15vmin !important;
-    }
-    .LineItem .emoji {
-        width:  30px;
-        height: 30px;
+        width:  9vmin;
+        height: 9vmin;
     }
 }
