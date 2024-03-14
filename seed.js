@@ -23,7 +23,6 @@ const Item = require('./models/item');
     {name: 'White Tee', image: '/images/white-tee.jpg', category: categories[0], price: 16.95},
     {name: 'Compression Tee', image: '/images/compression-shirt.jpg', category: categories[0], price: 14.95},
     {name: 'Black Tee', image: '/images/black-tee.jpg', category: categories[0], price: 15.99},
-    {name: 'Orange Tee', image: '/images/orange-tee.jpg', category: categories[0], price: 20.99},
     {name: 'Graphic Tee', image: '/images/graphic-tee.jpg', category: categories[0], price: 25.95},
     {name: 'Printed Hoodie', image: '/images/printed-hoodie.jpg', category: categories[1], price: 34.95},
     {name: 'Basketball Sweater', image: '/images/basketball-sweatshirt.jpg', category: categories[1], price: 30.99},
