@@ -1,4 +1,5 @@
 const Order = require('../../models/order');
+const domain = process.env.DOMAIN || 'http://localhost:3000';
 // const Item = require('../../models/item');
 const Stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
 module.exports = {
@@ -68,8 +69,8 @@ module.exports = {
         payment_method_types: ['card'],
         line_items: lineItems,
         mode: 'payment',
-        success_url: `http://localhost:3000/orders/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `http://localhost:3000/orders/new`,
+        success_url: `${domain}/orders/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${domain}/orders/new`,
         metadata: {
           cartId: cart._id.toString()
 
