@@ -19,7 +19,6 @@
     border: .1vmin solid rgb(240,240,240,0.8);
     outline: none;
     text-align: center;
-    font-weight: bold;
     text-decoration: none;
     color: var(--white);
     cursor: pointer;

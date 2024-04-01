@@ -63,16 +63,13 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
                 {isSidebarOpen ? '❮' : '❯'}
             </button>
             <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-                <div className="sidebarLogo">
-                    <img src="/images/brandlogo.png" alt="Brand Logo" />
-                </div>
                 <CategoryList
                     categories={categoriesRef.current}
                     activeCat={activeCat}
                     setActiveCat={setActiveCat}
                 />
             </aside>
-            <section className="main-content">
+            <section className={`main-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
                 <StoreList
                     storeItems={storeItems.filter(item => item.category.name === activeCat)}
                     handleAddToOrder={handleAddToOrder}
