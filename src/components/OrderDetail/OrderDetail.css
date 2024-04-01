@@ -58,6 +58,16 @@
     background-color: rgb(60,60,60)!important;
     font-family: var(--app-font);
     border-radius: 20px;
+    font-size: 1.5vmin;
+    padding: .6vmin .8vmin;
+    color: var(--white);
+    font-weight: bold;
+    text-decoration: none;
+    text-align:center;
+    border: .1vmin solid rgb(240,240,240,0.8);
+    outline: none;
+    cursor: pointer;
+    margin: 1vmin;
   }
 
 

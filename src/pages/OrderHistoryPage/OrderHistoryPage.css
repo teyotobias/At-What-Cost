@@ -15,10 +15,19 @@
     margin: 3vmin 2vmin;
 }
 .btn-new {
+    margin: 1vmin;
     font-family: var(--app-font);
+    color: var(--white);
     border-radius: 200px !important;
     background-color: rgb(60,60,60)!important;
     padding: 2vmin !important;
+    font-size: 2vmin;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: .1vmin solid rgb(240,240,240,0.8);
+    outline: none;
+    cursor: pointer;
 }
 .sidebarLogo {
     width: 20vmin;

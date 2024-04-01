@@ -63,6 +63,17 @@
 
 .LineItem button {
     margin: 0;
+    font-size: 1vmin;
+    padding: .4vmin .5vmin;
+    color: var(--white);
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: .1vmin solid rgb(240,240,240,0.8);
+    border-radius: .5vmin;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--black);
 }
 
 .itemqty {

@@ -13,16 +13,25 @@
     font-family: var(--app-font);
     border-radius: 1vmin;
     background-color: rgb(60,60,60)!important;
-    margin-bottom: 1vmin;
     padding: .9vmin !important;
+    font-size: 1.5vmin;
+    margin: 1vmin;
+    border: .1vmin solid rgb(240,240,240,0.8);
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--white);
+    cursor: pointer;
   }
 
 
-  @media (max-width: 800px) {
+
+  /* @media (max-width: 800px) {
     .logOutBtn {
       margin-bottom: 0.5vmin;
       font-size: .6vmin;
       padding: .5vmin;
     }
 
-  }
+  } */
