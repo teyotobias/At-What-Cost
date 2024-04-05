@@ -5,12 +5,11 @@
 .page-container {
     display: flex;
     position: relative;
-    background-color: var(--white);
     height: 100%;
     
 }
 .sidebar-toggle {
-    font-size: 1em !important;
+    font-size: 1.5em !important;
     position: fixed;
     top: 50%;
     left: .5%;
@@ -19,7 +18,7 @@
     cursor: pointer;
     background: none; 
     border: none; 
-    color: #555;
+    color: rgb(206,251,244);
     margin: 1vmin 1vmin 1vmin 0;
     padding: 1vmin 1vmin 1vmin 0.5vmin;
     font-weight: bold;
@@ -33,7 +32,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--white);
+    background-color: rgb(102,102,102);
     position: sticky;
     top: 0;
     height: 85%;
@@ -59,7 +58,6 @@
 .sidebar-open .main-content {
     width: calc(100% - 25vw)
 }
-
 
 
 

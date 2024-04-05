@@ -14,6 +14,13 @@
     /* height: 100%; */
     gap: clamp(0.5rem, 2vw, 1.5rem);
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-rows: minmax(140px, auto);
-    padding: 2%;
+    grid-auto-rows: minmax(230px, auto);
+    padding: 3%;
+}
+
+
+@media(width < 800px) {
+    .StoreList {
+        padding: 4%;
+    }
 }

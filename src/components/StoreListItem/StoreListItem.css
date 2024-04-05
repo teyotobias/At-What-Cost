@@ -3,9 +3,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     color: var(--text-light);
-    background-color: var(--white);
+    background-color: rgb(102,102,102);
     border: .1vmin solid lightgrey;
     border-radius: 1vmin;
     /* height: max-content; */
@@ -15,7 +15,7 @@
   .MenuListItem .emoji {
     height: 100%;
     width: 100%;
-    border-bottom: .1vmin solid var(--tan-3);
+    border-bottom: .1vmin solid rgb(206,251,244);
     border-radius: 1vmin 1vmin 0 0;
     display:grid;
     place-items:center;
@@ -32,7 +32,7 @@
  .MenuListItem .name {
     font-size: clamp(1em, 1.5vw, 1em);
     text-align: center;
-    color: var(--text-light);
+    color: white;
     margin-top: 1vmin; /* Space between image and text */
     font-family: var(--app-font);
 }
@@ -48,13 +48,14 @@
 
 .MenuListItem .price {
     font-size: clamp(0.5em, 1vw, .9em);
+    font-weight: bold;
     text-align: left;
-    color: var(--text-light);
+    color: rgb(206,251,244);
 }
 
 .add-btn {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: rgb(206,251,244);
+    color: rgb(102,102,102);
     font-family: var(--app-font);
     font-size: clamp(0.5em, 1vw, .8em);
     border-radius: 200px;

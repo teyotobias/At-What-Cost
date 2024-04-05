@@ -1,6 +1,7 @@
 .UserLogOut {
     font-size: 1vmin;
-    color: var(--text-light);
+    font-weight: bold;
+    color: rgb(206,251,244);
     text-align: center;
   }
   
@@ -12,7 +13,7 @@
   .logOutBtn {
     font-family: var(--app-font);
     border-radius: 1vmin;
-    background-color: rgb(60,60,60)!important;
+    background-color: rgb(206,251,244);
     padding: .9vmin !important;
     font-size: 1.5vmin;
     margin: 1vmin;
@@ -20,7 +21,7 @@
     outline: none;
     text-align: center;
     text-decoration: none;
-    color: var(--white);
+    color: rgb(102,102,102);
     cursor: pointer;
   }
 
