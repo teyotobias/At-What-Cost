@@ -18,7 +18,8 @@ export default function OrderDetailPage({user, setUser, cart, setCart}) {
         setCart(updatedCart);
     }
 
-
+    
+//cart page
     return (
             <div className="OrderDetailPage">
                 <OrderDetail 

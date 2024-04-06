@@ -5,7 +5,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import OrderList from '../../components/OrderList/OrderList';
-
+import Logo from '../../components/Logo/Logo';
 
 export default function OrderHistoryPage({ user, setUser }) {
   const [orders, setOrders] = useState([]);
@@ -23,11 +23,14 @@ export default function OrderHistoryPage({ user, setUser }) {
     getOrders();
   }, []);
 
+
+//history page
+
   return (
     <main className="OrderHistoryPage">
       <aside>
         <div className="sidebarLogo">
-          <img src="/images/brandlogo.png" alt="Brand Logo" />
+          <img src="/images/iPhone.png" alt="Shop Icon" />
         </div>
         <Link to="/orders/new" className="btn-new">NEW ORDER</Link>
         <UserLogOut user={user} setUser={setUser} />

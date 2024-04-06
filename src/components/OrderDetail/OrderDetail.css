@@ -4,14 +4,14 @@
     align-items: center;
     padding: 3vmin;
     font-size: 2vmin;
-    color: var(--text-light);
+    color: white;
     border-radius: 2vmin;
     /* width: 100%; */
   }
   
   .OrderDetail .section-heading {
     width: 100%;
-    background-color: rgb(240,240,240, .8);
+    background-color: rgb(102,102,102);
   }
   
   .OrderDetail .line-item-container {
@@ -24,12 +24,12 @@
   .OrderDetail .total {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 1vmin 0;
-    color: var(--text-light);
+    color: white;
     border-top: .3vmin rgb(210,210,210, .8);
-    background-color: rgb(240,240,240,.8);
-    margin-bottom: 1vmin;
+    background-color: rgb(102,102,102);
+    margin-top: 1vmin;
     border-bottom-right-radius: 2vmin;
     border-bottom-left-radius: 2vmin;
   }
@@ -39,7 +39,6 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5vw;
-    color: var(--text-dark);
   }
   
   .OrderDetail .total span.right {
@@ -55,19 +54,17 @@
     font-size: 2vmin;
   }
   .btn-checkout {
-    background-color: rgb(60,60,60)!important;
-    font-family: var(--app-font);
+    background-color: rgb(206,251,244);
     border-radius: 20px;
     font-size: 1.5vmin;
     padding: .6vmin .8vmin;
-    color: var(--white);
+    color: rgb(102,102,102);
     font-weight: bold;
     text-decoration: none;
     text-align:center;
     border: .1vmin solid rgb(240,240,240,0.8);
     outline: none;
     cursor: pointer;
-    margin: 1vmin;
   }
 
 

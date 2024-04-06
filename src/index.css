@@ -104,8 +104,9 @@ code {
   justify-content: space-around;
   align-items: center;
   background-color: rgb(230,230,230, .5);
-  color: var(--text-dark);
+  /* color: var(--text-dark); */
   background-color: rgb(230,230,230);
+  border-bottom: .1vmin solid rgb(230, 230, 230);
   border-radius: 1vmin;
   padding: .6vmin;
   text-align: center;

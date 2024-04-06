@@ -3,26 +3,26 @@
     display: grid;
     grid-template-columns: 1.6fr 3.5fr 3fr;
     grid-template-rows: 1fr;
-    background-color: var(--white);
+    background-color: rgb(102,102,102);
     border-radius: 2vmin;
 }
   
 .OrderHistoryPage aside {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 3vmin 2vmin;
 }
 .btn-new {
     margin: 1vmin;
     font-family: var(--app-font);
-    color: var(--white);
+    color: rgb(102,102,102);
     border-radius: 200px !important;
-    background-color: rgb(60,60,60)!important;
+    background-color: rgb(206,251,244);
     padding: 2vmin !important;
     font-size: 2vmin;
-    font-weight: bold;
+    font-weight: normal;
     text-decoration: none;
     text-align: center;
     border: .1vmin solid rgb(240,240,240,0.8);
@@ -30,8 +30,13 @@
     cursor: pointer;
 }
 .sidebarLogo {
-    width: 20vmin;
-    height: 20vmin;
+    max-width: 20vmin;
+    height: auto;
     border-radius: 50%;
+}
+
+svg {
+    width: 100%;
+    height: auto;
 }
 

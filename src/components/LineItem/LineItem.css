@@ -2,11 +2,11 @@
 .LineItem {
     width: 100%;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: space-around;
     padding: 1vmin 0;
-    color: var(--text-light);
-    background-color: rgb(240,240,240,.8);
+    color: white;
+    background-color: rgb(102,102,102);
     border-bottom: .1vmin solid rgb(230,230,230);
     font-size: 1.5vw;
 }
@@ -29,8 +29,8 @@
 
 /* to 100% for both w, h in cart */
 .LineItem .emoji {
-    width: 15vmin;
-    height: 15vmin;
+    max-width: clamp(8vmin, 5vw, 15vmin);
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +65,7 @@
     margin: 0;
     font-size: 1vmin;
     padding: .4vmin .5vmin;
-    color: var(--white);
+    color: rgb(206,251,244);
     font-weight: bold;
     text-decoration: none;
     text-align: center;
@@ -73,14 +73,16 @@
     border-radius: .5vmin;
     outline: none;
     cursor: pointer;
-    background-color: var(--black);
+    background-color: rgb(102,102,102);
 }
 
 .itemqty {
     padding: 3vmin;
 }
 
-@media (max-width: 800px) {
+
+
+/* @media (max-width: 800px) {
 
     .LineItem .emoji {
         width: 10vmin;
@@ -100,4 +102,4 @@
         width:  9vmin;
         height: 9vmin;
     }
-}
+} */

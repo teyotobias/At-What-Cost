@@ -41,7 +41,7 @@ export default function OrderDetail({ order, handleChangeQty, isCartPage}) {
           </>
         }
       </div>
-      <div className="line-item-container flex-ctr-ctr flex-col detail-font" style={!isCartPage ? { marginTop: '3vmin', padding: '0' } : {}}>
+      <div className="line-item-container flex-ctr-ctr flex-col detail-font" style={!isCartPage ? { marginTop: '1vmin', padding: '0' } : {}}>
         {lineItems.length ?
           <>
             {lineItems}
