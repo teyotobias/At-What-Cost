@@ -1,4 +1,4 @@
-.OrderDetail {
+.CartDetail {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -6,24 +6,22 @@
     font-size: 2vmin;
     color: white;
     border-radius: 2vmin;
-    /* width: 100%; */
+    width: 100%;
   }
   
-  .OrderDetail .section-heading {
+  .CartDetail .section-heading {
     width: 100%;
     background-color: rgb(102,102,102);
   }
   
-  .OrderDetail .line-item-container {
+  .CartDetail .line-item-container {
     justify-content: flex-start;
     height: calc(100vh - 18vmin);
     width: 100%;
     font-family: var(--app-font);
-    margin-top: 1vmin;
-    padding: 0;
   }
   
-  .OrderDetail .total {
+  .CartDetail .total {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -36,21 +34,21 @@
     border-bottom-left-radius: 2vmin;
   }
   
-  .OrderDetail .total span {
+  .CartDetail .total span {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5vw;
   }
   
-  .OrderDetail .total span.right {
+  .CartDetail .total span.right {
     display: flex;
     justify-content: space-between;
     margin-top: 1vmin;
     padding: 1vmin;
   }
   
-  .OrderDetail .hungry {
+  .CartDetail .hungry {
     position: absolute;
     top: 50vh;
     font-size: 2vmin;
@@ -67,6 +65,7 @@
     border: .1vmin solid rgb(240,240,240,0.8);
     outline: none;
     cursor: pointer;
+    margin-top: 1vmin;
   }
 
 
@@ -90,7 +89,3 @@
       margin-left: 3vmin;
     }
   }
-
-
-  
-

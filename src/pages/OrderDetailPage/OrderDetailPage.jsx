@@ -1,5 +1,5 @@
 import './OrderDetailPage.css';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import CartDetail from '../../components/CartDetail/CartDetail';
 import * as ordersAPI from '../../utilities/orders-api';
 import { useEffect } from 'react';
 export default function OrderDetailPage({user, setUser, cart, setCart}) {
@@ -22,10 +22,9 @@ export default function OrderDetailPage({user, setUser, cart, setCart}) {
 //cart page
     return (
             <div className="OrderDetailPage">
-                <OrderDetail 
+                <CartDetail 
                     order={cart} 
                     handleChangeQty={handleChangeQty} 
-                    isCartPage={true}
                 />
             </div>
     );
