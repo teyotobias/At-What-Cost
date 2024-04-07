@@ -1,9 +1,9 @@
 /* height to 20vmin for cart */
 .CartItem {
-    width: 100%;
-    display: flex;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    justify-content: space-around;
     padding: 1vmin 0;
     color: white;
     background-color: rgb(102,102,102);
@@ -11,61 +11,43 @@
     font-size: 1.5vw;
     height: 20vmin;
 }
-.CartItem .itemContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+
+.CartItemImage {
+    grid-column: span 1;
+    max-height: 15vmin;
+    object-fit: contain;
+    height: clamp(40px, 16vmin, 18vmin);
 }
 
-.margin-left {
-    margin-left: 1.5vmin;
-}
 
 
 
 .LineItem:last-child {
-    border-bottom: .1vmin solid var(--tan-3);
+    border-bottom: .1vmin solid white;
 }
 
-/* to 100% for both w, h in cart */
-.CartItem .emoji {
-    max-width: clamp(8vmin, 5vw, 15vmin);
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-
-.CartItem .emoji img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    object-position: center;
-    
-}
 
 
 .CartItem .qty {
+    grid-column: 2 / 3;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3vw;
+    font-size: clamp(7px, 1.5vw, 20px);
 }
 
 .CartItem .ext-price {
+    grid-column: 3 / 4;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    font-size: 1.3vw;
+    font-size: clamp(7px, 1.5vw, 20px);
 }
 
 .CartItem button {
+    font-size: 1vw;
     margin: 0;
-    font-size: 1vmin;
-    padding: .4vmin .5vmin;
+    padding: .5vmin 1vmin;
     color: rgb(206,251,244);
     font-weight: bold;
     text-decoration: none;

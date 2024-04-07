@@ -28,17 +28,13 @@ export default function CartDetail({ order, handleChangeQty }) {
 
     return (
         <div className="CartDetail">
-            <div className="section-heading" style={{ borderBottomLeftRadius:'0', borderBottomRightRadius: '0', borderBottom: '.1vmin solid rgb(230,230,230)'}}>
-                <span className="spanItem">ITEM</span>
-                <span className="spanItem">QTY</span>
-                <span className="spanItem">PRICE</span>
-            </div>
-
-            <div className="line-item-container flex-ctr-ctr flex-col detail-font">
+            <div className="headerItem headerItem1">ITEM</div>
+            <div className="headerItem">QTY</div>
+            <div className="headerItem headerItem3">PRICE</div>
             {lineItems.length ?
                 <>
                 {lineItems}
-                <section className="total" style={{paddingBottom: '3vmin'}}>
+                <section className="total">
                     <button
                     className="btn-sm btn-checkout"
                     style={{width: 'auto', height: '100%'}}
@@ -50,7 +46,6 @@ export default function CartDetail({ order, handleChangeQty }) {
                 :
                 <div className="hungry">Your cart is empty.</div>
             }
-            </div>
         </div>
     )
 }

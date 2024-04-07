@@ -1,6 +1,8 @@
 .CartDetail {
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* flex-direction: column;
+    justify-content: flex-start; */
     align-items: center;
     padding: 3vmin;
     font-size: 2vmin;
@@ -8,11 +10,24 @@
     border-radius: 2vmin;
     width: 100%;
   }
-  
-  .CartDetail .section-heading {
-    width: 100%;
-    background-color: rgb(102,102,102);
+
+  .headerItem {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-top: .1vmin solid white;
+    border-bottom: .1vmin solid white;
+    padding: 1vmin;
+    font-size: clamp(7px, 1.5vw, 20px);
+    font-weight: 125;
   }
+  .headerItem1 {
+    border-left: .1vmin solid white;
+  }
+  .headerItem3 {
+    border-right: .1vmin solid white;
+  }
+
   
   .CartDetail .line-item-container {
     justify-content: flex-start;
@@ -22,16 +37,15 @@
   }
   
   .CartDetail .total {
-    width: 100%;
+    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     padding: 1vmin 0;
     color: white;
     border-top: .3vmin rgb(210,210,210, .8);
     background-color: rgb(102,102,102);
-    margin-top: 1vmin;
-    border-bottom-right-radius: 2vmin;
-    border-bottom-left-radius: 2vmin;
+    margin-top: .5vmin;
+    border-radius: 2vmin;
   }
   
   .CartDetail .total span {
@@ -56,7 +70,7 @@
   .btn-checkout {
     background-color: rgb(206,251,244);
     border-radius: 20px;
-    font-size: 1.5vmin;
+    font-size: 2vmin;
     padding: .6vmin .8vmin;
     color: rgb(102,102,102);
     font-weight: bold;
@@ -68,24 +82,8 @@
     margin-top: 1vmin;
   }
 
-
-  @media (max-width: 1200px) {
-    .spanItem {
-      margin-left: 4vmin;
-    }
+@media(width < 800px) {
+  .CartDetail {
+    padding-top: 0;
   }
-  @media (max-width: 1000px) {
-    .spanItem {
-      margin-left: 6vmin;
-    }
-  }
-  @media (max-width: 800px) {
-    .spanItem {
-      margin-left: 4vmin;
-    }
-  }
-  @media (max-width: 500px) {
-    .spanItem {
-      margin-left: 3vmin;
-    }
-  }
+}

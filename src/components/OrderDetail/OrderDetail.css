@@ -19,7 +19,6 @@
     height: calc(100vh - 18vmin);
     width: 100%;
     font-family: var(--app-font);
-    margin-top: 1vmin;
     padding: 0;
   }
   
