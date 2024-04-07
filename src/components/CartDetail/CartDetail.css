@@ -37,10 +37,10 @@
   }
   
   .CartDetail .total {
-    grid-column: 1 / -1;
+    grid-column: 3 / 4;
     display: flex;
-    justify-content: center;
-    padding: 1vmin 0;
+    justify-content: flex-end;
+    padding: 1vmin 1vmin;
     color: white;
     border-top: .3vmin rgb(210,210,210, .8);
     background-color: rgb(102,102,102);
@@ -63,8 +63,11 @@
   }
   
   .CartDetail .hungry {
-    position: absolute;
-    top: 50vh;
+    display: flex;
+    padding: 1rem;
+    align-content: center;
+    justify-content: center;
+    grid-column: 2 / 3;
     font-size: 2vmin;
   }
   .btn-checkout {

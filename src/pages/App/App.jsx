@@ -9,6 +9,8 @@ import OrderDetailPage from '../OrderDetailPage/OrderDetailPage';
 import PaymentSuccessPage from '../PaymentSuccessPage/PaymentSuccessPage';
 import { getUser } from '../../utilities/users-service';
 import  NavBar  from '../../components/NavBar/NavBar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // React Router provides several components used to conditionally
 // render our app’s components based upon the path of the URL in the address bar - client side routing
 //wrapped App w/ BrowserRouter in index.js where we are rendering app
@@ -23,6 +25,7 @@ export default function App() {
 
   return (
     <main className="App">
+      <ToastContainer />
       { user && pathsToShowNavBar.includes(location.pathname) && <NavBar user={user} setUser={setUser}/>}
       { user ?
         <Routes>

@@ -1,4 +1,3 @@
-import LineItem from '../LineItem/LineItem'; //change
 import CartItem from '../CartItem/CartItem';
 import './CartDetail.css';
 import { createCheckoutSession } from '../../utilities/orders-api';

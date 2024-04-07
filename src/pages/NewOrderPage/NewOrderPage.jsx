@@ -4,7 +4,7 @@ import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import StoreList from '../../components/StoreList/StoreList';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import CustomModal from '../../components/CustomModal/CustomModal';
+import { toast } from 'react-toastify';
 
 
 
@@ -12,7 +12,6 @@ import CustomModal from '../../components/CustomModal/CustomModal';
 export default function NewOrderPage({ user, setUser, cart, setCart}) {
     const [storeItems, setStoreItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
-    const [showModal, setShowModal] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const categoriesRef = useRef([]);
 
@@ -48,12 +47,17 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
         //update cart state w/updated cart from server
         const cart = await ordersAPI.addItemToCart(itemId);
         setCart(cart);
-        setShowModal(true)
+        toast.success('Item added to the cart!', {
+            style: {
+                backgroundColor: 'rgb(102,102,102)',
+                color: "white",
+            },
+            progressStyle: {
+                background: "rgb(206,251,244)",
+            },
+        });
     }
     
-    const handleCloseModal = () => {
-        setShowModal(false);
-    }
 
 
     return (
@@ -76,13 +80,6 @@ export default function NewOrderPage({ user, setUser, cart, setCart}) {
                 />
             </section>
         </div>
-        {showModal && (
-                <CustomModal 
-                    message={"Added To Cart!"}
-                    onClose={handleCloseModal}
-                    closeMessage={"Continue Shopping"}
-                />
-            )}
         </>
     )
 }
