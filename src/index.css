@@ -24,6 +24,14 @@ button.btn-xs {
   padding: .4vmin .5vmin;
 } */
 
+.Toastify__toast-theme--light {
+  background-color: rgb(102,102,102) !important; /* Replace #yourColorHere with your desired color */
+  color: white;
+}
+.Toastify__close-button {
+  background-color: rgb(206,251,244) !important;
+  padding: 2em;
+}
 :root {
   --toastify-icon-color-success: rgb(206,251,244);
   --app-font: 'Barlow', sans-serif;

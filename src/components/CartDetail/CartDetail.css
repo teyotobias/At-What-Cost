@@ -39,13 +39,14 @@
   .CartDetail .total {
     grid-column: 3 / 4;
     display: flex;
-    justify-content: flex-end;
-    padding: 1vmin 1vmin;
+    justify-content: center;
+    padding: 2vmin 2vmin;
     color: white;
     border-top: .3vmin rgb(210,210,210, .8);
     background-color: rgb(102,102,102);
     margin-top: .5vmin;
     border-radius: 2vmin;
+    font-size: clamp(7px, 5vmin, 15px);
   }
   
   .CartDetail .total span {
