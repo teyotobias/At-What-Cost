@@ -163,8 +163,8 @@ input:focus {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: white;
-  color: black;
+  background-color: rgb(102,102,102);
+  color: white;
   font-family: "Barlow", sans-serif;
   font-weight: 300;
   font-style: normal;

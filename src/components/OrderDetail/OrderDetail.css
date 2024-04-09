@@ -1,4 +1,5 @@
 .OrderDetail {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -6,7 +7,6 @@
     font-size: 2vmin;
     color: white;
     border-radius: 2vmin;
-    /* width: 100%; */
   }
   
   .OrderDetail .section-heading {
@@ -15,18 +15,19 @@
   }
   
   .OrderDetail .line-item-container {
+    display: flex;
     justify-content: flex-start;
-    height: calc(100vh - 18vmin);
+    height: auto;
+    overflow-y: auto;
     width: 100%;
-    font-family: var(--app-font);
     padding: 0;
   }
   
   .OrderDetail .total {
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding: 1vmin 0;
+    justify-content: flex-end;
+    padding: 1vmin 0.5vmin;
     color: white;
     border-top: .3vmin rgb(210,210,210, .8);
     background-color: rgb(102,102,102);
@@ -67,29 +68,5 @@
     outline: none;
     cursor: pointer;
   }
-
-
-  @media (max-width: 1200px) {
-    .spanItem {
-      margin-left: 4vmin;
-    }
-  }
-  @media (max-width: 1000px) {
-    .spanItem {
-      margin-left: 6vmin;
-    }
-  }
-  @media (max-width: 800px) {
-    .spanItem {
-      margin-left: 4vmin;
-    }
-  }
-  @media (max-width: 500px) {
-    .spanItem {
-      margin-left: 3vmin;
-    }
-  }
-
-
   
 

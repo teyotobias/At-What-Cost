@@ -11,8 +11,8 @@
 }
 
 .signUpButton:enabled {
-    background-color: rgb(102,102,102);
-    color: white;
+    background-color: white;
+    color: black
 }
 
 label {

@@ -40,9 +40,8 @@
     grid-column: 3 / 4;
     display: flex;
     justify-content: center;
-    padding: 2vmin 2vmin;
+    padding: 3vmin 3vmin;
     color: white;
-    border-top: .3vmin rgb(210,210,210, .8);
     background-color: rgb(102,102,102);
     margin-top: .5vmin;
     border-radius: 2vmin;
@@ -75,7 +74,7 @@
     background-color: rgb(206,251,244);
     border-radius: 20px;
     font-size: 2vmin;
-    padding: .6vmin .8vmin;
+    padding: 1.5vmin 2vmin;
     color: rgb(102,102,102);
     font-weight: bold;
     text-decoration: none;

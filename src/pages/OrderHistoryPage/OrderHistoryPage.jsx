@@ -32,7 +32,9 @@ export default function OrderHistoryPage({ user, setUser }) {
           <img src="/images/iPhone.png" alt="Shop Icon" />
         </div>
         <Link to="/orders/new" className="btn-new">NEW ORDER</Link>
-        <UserLogOut user={user} setUser={setUser} />
+        <div className="logout-wrapper">
+          <UserLogOut user={user} setUser={setUser} />
+        </div>
       </aside>
       <OrderList
         orders={orders}

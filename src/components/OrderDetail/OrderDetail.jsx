@@ -28,19 +28,16 @@ export default function OrderDetail({ order, handleChangeQty, isCartPage}) {
   return (
     <div className="OrderDetail">
       <div className="section-heading">
-        
         <span>ORDER <span className="smaller">{order.orderId}</span></span>
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
-        
       </div>
       <div className="line-item-container flex-ctr-ctr flex-col detail-font">
         {lineItems.length ?
           <>
             {lineItems}
-            <section className="total" style={{gridTemplateColumns: '11vw 12vw 7vw'}}>
-              <span className="right">&nbsp;&nbsp;&nbsp;TOTAL:</span>
+            <section className="total">
+              <span className="right">TOTAL:</span>
               <span className="right">${order.orderTotal.toFixed(2)}</span>
-             
             </section>
           </>
           :
