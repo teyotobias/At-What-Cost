@@ -1,24 +1,32 @@
 .navbar {
     display: flex;
-    justify-content: space-between !important;
+    justify-content: space-around;
     align-items: center;
-    background-color: white;
-    padding: 5vmin;
-    height: 10%;
-    font-size: 2.5vmin;
+    height: 15%;
+    font-size: clamp(7px, 1.3vmax, 20px);
+    background-color: rgb(102,102,102);
+    width: 100%;
+    justify-self: flex-start;
 }
 .navbarLogo {
-    height: 13vmin;
-    width: 13vmin;
+    max-width: 20%;
+    height: 100%;
+    object-fit: contain;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    font-size: 2.7vmin;
-    padding: 1vmin;
 }
+/* .Logo svg {
+    width: 100%;
+    height: auto;
+} */
 
+
+a {
+    text-decoration: none;
+    color: rgb(206,251,244);
+    font-weight: bold;
+}
 .nav-links {
     display: flex;
     gap: 8vmin;
@@ -29,15 +37,15 @@
     text-decoration: none;
 }
 
-@media (max-width: 800px) {
+@media (width <= 800px) {
     .navbar {
-        font-size: 2vmin;
+        height: 10%;
     }
-    .nav-links {
-        gap: 5vmin;
+}
+
+
+@media (width <= 500px) {
+    .navbar {
+        height: 8%;
     }
-    .navbarLogo {
-        height: 12vmin;
-        width: 12vmin;
-    }
-  }
+}

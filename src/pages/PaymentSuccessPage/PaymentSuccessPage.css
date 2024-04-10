@@ -1,0 +1,11 @@
+.toastContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(206,251,244);
+}
+
+.logoContainer {
+    max-height: 50vh;
+}
