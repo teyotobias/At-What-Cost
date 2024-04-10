@@ -1,0 +1,64 @@
+/* height to 20vmin for cart */
+.CartItem {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1vmin 0;
+    color: white;
+    background-color: rgb(102,102,102);
+    border-bottom: .1vmin solid rgb(230,230,230);
+    font-size: 1.5vw;
+    height: 20vmin;
+}
+
+.CartItemImage {
+    grid-column: span 1;
+    max-height: 15vmin;
+    object-fit: contain;
+    height: clamp(40px, 16vmin, 18vmin);
+}
+
+
+
+
+.LineItem:last-child {
+    border-bottom: .1vmin solid white;
+}
+
+
+
+.CartItem .qty {
+    grid-column: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(7px, 1.5vw, 20px);
+}
+
+.CartItem .ext-price {
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(7px, 1.5vw, 20px);
+}
+
+.CartItem button {
+    font-size: 1vw;
+    margin: 0;
+    padding: .5vmin 1vmin;
+    color: rgb(206,251,244);
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: .1vmin solid rgb(240,240,240,0.8);
+    border-radius: .5vmin;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(102,102,102);
+}
+
+.itemqty {
+    padding: 3vmin;
+}

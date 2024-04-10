@@ -5,9 +5,9 @@
     align-items: center;
     margin-bottom: 3vmin;
     padding: 2vmin;
-    color: var(--text-light);
-    background-color: var(--white);
-    border: .2vmin rgb(230,230,230);
+    color: white;
+    background-color: rgb(102,102,102);
+    border: .2vmin solid rgb(206,251,244);
     border-radius: 1vmin;
     font-size: 2vmin;
     cursor: pointer;
@@ -18,7 +18,7 @@
 }
   
 .OrderListItem.selected {
-    border: .2vmin solid rgb(0,0,0,.7)
+    border: .2vmin solid rgb(230,230,230);
     /* border-color: black;
     border-width: .2vmin;
     cursor: default;

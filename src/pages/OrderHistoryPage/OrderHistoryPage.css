@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1.6fr 3.5fr 3fr;
     grid-template-rows: 1fr;
-    background-color: var(--white);
+    background-color: rgb(102,102,102);
     border-radius: 2vmin;
 }
   
@@ -12,17 +12,44 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 3vmin 2vmin;
+    height: 100%;
 }
 .btn-new {
     font-family: var(--app-font);
-    border-radius: 200px !important;
-    background-color: rgb(60,60,60)!important;
-    padding: 2vmin !important;
+    color: rgb(102,102,102);
+    border-radius: 100px !important;
+    background-color: rgb(206,251,244);
+    padding: 2vmin 1vmin;
+    font-size: 2vmin;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+    border: .1vmin solid rgb(240,240,240,0.8);
+    outline: none;
+    cursor: pointer;
 }
 .sidebarLogo {
-    width: 20vmin;
-    height: 20vmin;
+    max-width: 20vmin;
+    height: auto;
     border-radius: 50%;
+    margin-top: 2vmin;
 }
 
+.logout-wrapper {
+    margin-bottom: 3vmin;
+}
+
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+@media (width <= 600px) {
+    .logout-wrapper {
+        margin-bottom: 35vmin;
+    }
+    .sidebarLogo {
+        margin-top: 15vmin;
+    }
+}

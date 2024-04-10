@@ -1,4 +1,4 @@
-.Logo {
+/* .Logo {
     height: 50vmin;
     width: 50vmin;
     display: flex;
@@ -7,17 +7,15 @@
     align-items: center;
     border-radius: 50%;
     font-size: 2.7vmin;
-}
+} */
 
-.Logo img {
+/* .Logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+} */
+
+.Logo svg {
+    width: 50%; /* needs a defined width for every use - maybe leave this up to each page itself. */
+    height: auto;
 }
-
-
-
-
-
-
-

@@ -1,21 +1,21 @@
 .MenuListItem {
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3vmin;
+    /* margin-bottom: 2rem; */
     color: var(--text-light);
-    background-color: var(--white);
-    border: .1vmin solid lightgrey;
+    background-color: rgb(102,102,102);
+    border: .1vmin solid rgb(206,251,244);
     border-radius: 1vmin;
-    height: max-content;
+    /* height: max-content; */
     
   }
   
   .MenuListItem .emoji {
     height: 100%;
     width: 100%;
-    border-bottom: .1vmin solid var(--tan-3);
+    border-bottom: .1vmin solid rgb(206,251,244);
     border-radius: 1vmin 1vmin 0 0;
     display:grid;
     place-items:center;
@@ -23,17 +23,18 @@
   }
 
   img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     height: 100%;
     width: 100%;
   }
   
  .MenuListItem .name {
-    font-size: 2vw;
+    font-size: clamp(1em, 1.5vw, 1em);
     text-align: center;
-    color: var(--text-light);
+    color: white;
     margin-top: 1vmin; /* Space between image and text */
+    font-family: var(--app-font);
 }
 
 .MenuListItem .details {
@@ -42,36 +43,32 @@
     align-items: center;
     width: 100%; /* Take up full width */
     margin-top: auto; /* Push to bottom */
-    padding: 2vmin;
+    padding: 0.5rem;
 }
 
 .MenuListItem .price {
-    font-size: 2vmax;
+    font-size: clamp(0.5em, 1vw, .9em);
+    font-weight: bold;
     text-align: left;
-    color: var(--text-light);
+    color: rgb(206,251,244);
 }
 
 .add-btn {
-    font-size: 1.2vw;
-    background-color: rgb(60,60,60);
+    background-color: rgb(206,251,244);
+    color: rgb(102,102,102);
     font-family: var(--app-font);
+    font-size: clamp(0.5em, 1vw, .8em);
     border-radius: 200px;
-    width: 10vmin; /* Adjust width as needed */
-    height: 5vmin;
-    padding: 0.5vmin; /* Adjust padding */
-    margin: 1vmin; /* Space from the edge */
+    width: auto;
+    height: auto;
+    padding: clamp(0.5em, .9vw, .30em);
+    text-align: center;
+    cursor: pointer;
+    border: .1vmin solid rgb(240,240,240,0.8);
 }
   
   .MenuListItem .buy span {
-    font-size: 1.2vw;
+    font-size: 1rem;
     text-align: center;
     color: var(--text-light);
   }
-  
-  .MenuListItem .name {
-    font-size: 2vw;
-    text-align: center;
-    color: var(--text-light);
-    font-family: var(--app-font);
-  }
-
