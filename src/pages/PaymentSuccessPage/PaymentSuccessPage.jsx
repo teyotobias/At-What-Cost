@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { verifySession } from '../../utilities/orders-api';
 import { toast } from 'react-toastify';
 import './PaymentSuccessPage.css';
-import Logo from '../../components/Logo/Logo';
+// import Logo from '../../components/Logo/Logo';
 export default function PaymentSuccessPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -37,26 +37,28 @@ export default function PaymentSuccessPage() {
         try {
           const response = await verifySession(sessionId);
           if (response.verified) {
+            navigate('/orders');
+            // navigate('http://172.20.10.4:3000/orders');
             // Call the toast function with a custom render component
 
-            const toastId = 'paymentSuccessId';
-            toast(<div className="toastContainer">
-              Thank You! 
-              <button onClick={() => {
-                toast.dismiss(toastId);
-                navigate('/orders');
-               }} 
-               style={{ display: 'block', marginTop: '10px', color: 'rgb(102,102,102', background: 'rgb(206,251,244)', cursor: 'pointer' }}>
-                Go to Orders
-              </button>
-            </div>, {
-              position: "bottom-center",
-              autoClose: false,
-              closeOnClick: false,
-              draggable: true,
-              toastId: toastId, // Ensure unique ID
-              style: { marginBottom: 'clamp(5px, 5vh, 10px'},
-            });
+            // const toastId = 'paymentSuccessId';
+            // toast(<div className="toastContainer">
+            //   Thank You! 
+            //   <button onClick={() => {
+            //     toast.dismiss(toastId);
+            //     navigate('/orders');
+            //    }} 
+            //    style={{ display: 'block', marginTop: '10px', color: 'rgb(102,102,102', background: 'rgb(206,251,244)', cursor: 'pointer' }}>
+            //     Go to Orders
+            //   </button>
+            // </div>, {
+            //   position: "bottom-center",
+            //   autoClose: false,
+            //   closeOnClick: false,
+            //   draggable: true,
+            //   toastId: toastId, // Ensure unique ID
+            //   style: { marginBottom: 'clamp(5px, 5vh, 10px'},
+            // });
           } else {
             navigate('/orders/new');
           }
@@ -71,11 +73,12 @@ export default function PaymentSuccessPage() {
   }, [sessionId, navigate]);
 
   return (
-    <>
-      <div className="logoContainer"style={{ maxWidth: '60%', margin: '0 auto', display: 'block' }}>
-        <Logo />
-      </div>
-    </>
+    // <>
+    //   <div className="logoContainer"style={{ maxWidth: '60%', margin: '0 auto', display: 'block' }}>
+    //     <Logo />
+    //   </div>
+    // </>
+    <div>Verifying your payment...</div>
 
   );
 
