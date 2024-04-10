@@ -7,11 +7,17 @@
     font-size: 2vmin;
     color: white;
     border-radius: 2vmin;
+    overflow-y: auto;
   }
   
   .OrderDetail .section-heading {
     width: 100%;
     background-color: rgb(102,102,102);
+  }
+
+  .emoji {
+    display:flex;
+    justify-content: center;
   }
   
   .OrderDetail .line-item-container {

@@ -45,3 +45,11 @@ svg {
     height: auto;
 }
 
+@media (width <= 600px) {
+    .logout-wrapper {
+        margin-bottom: 35vmin;
+    }
+    .sidebarLogo {
+        margin-top: 15vmin;
+    }
+}

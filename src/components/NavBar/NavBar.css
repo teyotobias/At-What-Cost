@@ -2,25 +2,25 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 1vmin;
     height: 15%;
-    font-size: clamp(7px, 1.2vw, 20px);
+    font-size: clamp(7px, 1.3vmax, 20px);
     background-color: rgb(102,102,102);
     width: 100%;
     justify-self: flex-start;
 }
 .navbarLogo {
     max-width: 20%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.Logo svg {
+/* .Logo svg {
     width: 100%;
     height: auto;
-}
+} */
+
 
 a {
     text-decoration: none;
@@ -37,8 +37,15 @@ a {
     text-decoration: none;
 }
 
-@media (max-width: 800px) {
-    .nav-links {
-        gap: 5vmin;
+@media (width <= 800px) {
+    .navbar {
+        height: 10%;
     }
-  }
+}
+
+
+@media (width <= 500px) {
+    .navbar {
+        height: 8%;
+    }
+}

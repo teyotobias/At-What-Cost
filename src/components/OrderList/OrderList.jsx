@@ -13,7 +13,7 @@ export default function OrderList({ orders, activeOrder, setActiveOrder }) {
     />
   ))
   ) : (
-    <p>No Previous Orders</p>
+    <div className="noOrders">No Previous Orders</div>
   );
 
   return (
