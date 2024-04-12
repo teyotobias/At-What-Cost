@@ -16,6 +16,6 @@
 } */
 
 .Logo svg {
-    width: 50%; /* needs a defined width for every use - maybe leave this up to each page itself. */
+    /* width: 50%; */
     height: auto;
 }

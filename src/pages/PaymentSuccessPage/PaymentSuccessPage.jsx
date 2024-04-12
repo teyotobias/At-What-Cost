@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { verifySession } from '../../utilities/orders-api';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import './PaymentSuccessPage.css';
 // import Logo from '../../components/Logo/Logo';
 export default function PaymentSuccessPage() {
