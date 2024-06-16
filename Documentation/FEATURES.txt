@@ -1,0 +1,8 @@
+- RESTful API: Serves API routes for users, items, and orders.
+
+HOW? 
+HTTP Methods: Routes follow REST principles by using appropriate HTTP methods (POST for creating and logging in users, GET 
+for checking token status)
+Endpoint structure: Each endpoint is designed around a resource ('/api/users')
+Stateless Communication: Use of JWT for authentication, maintaining stateless sessions.
+JSON Responses: Returns data and tokens in JSON format.

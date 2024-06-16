@@ -1,0 +1,3 @@
+Automatically generated file that describes the
+exact tree of dependencies that were installed, ensuring
+consistent installs across different environments.
