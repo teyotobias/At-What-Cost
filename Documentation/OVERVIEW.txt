@@ -1,0 +1,81 @@
+High-Level Documentation of MERN Stack eCommerce App:
+
+Project Structure and Purpose
+
+ROOT LEVEL
+
+server.js: Sets up and configures the Express server.
+seed.js: Populates the database with initial data.
+Procfile: Specifies commands for Heroku deployment.
+package.json & package-lock.json: Manage project dependencies and scripts.
+index.js: Entry point for the React application.
+
+FOLDERS
+
+.vscode: Configuration for Visual Studio Code.
+build: Contains the production-ready build of the frontend application.
+config: Contains configuration files for the database and authentication.
+controllers/api: Contains controller files that handle business logic for API routes.
+models: Contains Mongoose schemas and models for interacting with MongoDB.
+node_modules: Contains all npm dependencies.
+public: Static files that are publicly accessible.
+routes/api: Defines API routes for the application.
+src: Source code for the frontend application.
+Application Flow
+Frontend (React)
+index.js: Initializes the React application, wraps it with React Router for client-side routing.
+Utilities Folder:
+orders-api.js: Provides functions to interact with the backend for order-related operations using sendRequest.
+send-request.js: General utility for making HTTP requests, handling authentication tokens, and parsing responses.
+Backend (Express)
+server.js: Sets up middleware, serves static files, defines API routes, and starts the server.
+routes/api/orders.js: Defines routes for order-related operations and maps them to controller functions.
+controllers/api/orders.js: Contains business logic for handling orders, such as getting the cart, adding items, and managing checkout sessions.
+models/order.js: Defines the Mongoose schema for orders, including methods for interacting with orders.
+
+INTERCONNECTIONS
+
+FRONTEND TO BACKEND COMMUNICATION
+
+orders-api.js uses sendRequest to make HTTP requests to the backend.
+sendRequest adds necessary headers, including authorization tokens, and handles JSON payloads.
+Backend Routes and Controllers
+
+routes/api/orders.js maps HTTP routes to controller functions in controllers/api/orders.js.
+controllers/api/orders.js interacts with the models/order.js to perform database operations.
+
+DATABASE INTERACTIONS
+
+models/order.js defines schema and methods for orders, providing an interface to MongoDB.
+
+KEY TECHNOLOGIES AND THEIR ROLES
+
+MongoDB: NoSQL database for storing user, item, order, and category data.
+Express.js: Web framework for setting up the server, defining routes, and handling requests.
+React.js: Frontend library for building user interfaces and managing client-side routing.
+Node.js: JavaScript runtime for executing server-side code.
+JWT (JSON Web Tokens): For user authentication, ensuring secure communication and user session management.
+Stripe: Payment gateway for handling transactions securely.
+AJAX (Asynchronous JavaScript and XML): For asynchronous data exchange between frontend and backend.
+
+COMMON PATTERNS AND PRACTICES
+MVC Pattern: Separation of concerns with Models (MongoDB schemas), Views (React components), and Controllers (Express handlers).
+RESTful API: Defines clear endpoints using HTTP methods for CRUD operations.
+JWT Authentication: Securely handles user authentication and protects routes using middleware.
+Single Page Application (SPA): Uses React Router for client-side routing and dynamic content updates.
+Asynchronous Operations: Utilizes AJAX for non-blocking data requests and updates.
+
+EXAMPLE FLOW: ORDER MODEL:
+
+Frontend
+
+orders-api.js: Functions like createCheckoutSession, verifySession, getCart, addItemToCart, setItemQtyInCart, and getAllForUser use sendRequest to make API calls.
+send-request.js: Handles HTTP requests, including setting headers, handling tokens, and parsing JSON responses.
+Backend
+
+routes/api/orders.js: Defines routes such as GET /api/orders/cart, POST /api/orders/cart/items/:id, PUT /api/orders/cart/qty, etc.
+controllers/api/orders.js: Implements logic for each route, interacting with the Order model and Stripe API.
+models/order.js: Defines the schema and methods for order documents, such as getCart, addItemToCart, and setItemQty.
+Database
+
+order.js: Interacts with MongoDB to retrieve and update order documents.

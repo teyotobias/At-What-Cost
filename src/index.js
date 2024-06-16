@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './pages/App/App';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import { Elements } from "@stripe/react-stripe-js";
-// import { loadStripe } from "@stripe/stripe-js";
 
-// const stripePromise = loadStripe('your-publishable-key');
 // React Router provides several components used to conditionally render our app’s components based upon the path of the URL in the address bar
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

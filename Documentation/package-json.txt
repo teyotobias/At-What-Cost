@@ -1,2 +1,0 @@
-Contains metadata about the project, including dependencies,
-scripts, and other configurations required by npm

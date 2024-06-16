@@ -1,2 +1,0 @@
-Specifies the commands that are run by the application on
-the Heroku platform, defining how to start the application.
