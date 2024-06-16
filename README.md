@@ -19,7 +19,8 @@ Join us in celebrating the beauty of value, absent of the need to ask yourself: 
 
 <img width="1164" alt="Screenshot 2024-06-16 at 14 05 12" src="https://github.com/teyotobias/At-What-Cost/assets/112126540/33a4c071-a4d3-40e4-a6c5-839e6b553e15">
 
-<img width="1167" alt="Screenshot 2024-06-16 at 14 05 45" src="https://github.com/teyotobias/At-What-Cost/assets/112126540/e8e96696-ab09-4319-b7bc-e6dfdcbe2207">
+<img width="1168" alt="Screenshot 2024-06-16 at 14 11 21" src="https://github.com/teyotobias/At-What-Cost/assets/112126540/cc786a09-5682-4e9c-8b65-5c380a042b4f">
+
 
 
 ## TEST MODE CREDIT CARD INFO
