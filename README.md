@@ -24,7 +24,7 @@ Join us in celebrating the beauty of value, absent of the need to ask yourself: 
 
 
 ## TEST MODE CREDIT CARD INFO
-4242 4242 4242 4242                  04/24            837              28976
+4242 4242 4242 4242                  **ANY VALID DATE**            837              28976
 
 
 ## Features:
