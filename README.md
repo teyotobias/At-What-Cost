@@ -22,13 +22,6 @@ Join us in celebrating the beauty of value, absent of the need to ask yourself: 
 <img width="1167" alt="Screenshot 2024-06-16 at 14 05 45" src="https://github.com/teyotobias/At-What-Cost/assets/112126540/e8e96696-ab09-4319-b7bc-e6dfdcbe2207">
 
 
-
-<img width="1200" alt="Screenshot 2023-08-1![Uploading Screenshot 2024-06-16 at 14.03.49.png…]()
-8 at 22 38 23" src="https://github.com/teyotobias/atwhatcost/assets/112126540/7fa3c1fa-abb0-48d1-b6f6-dc72db0e4f05">
-
-
-<img width="1494" alt="Screenshot 2023-08-18 at 22 39 51" src="https://github.com/teyotobias/atwhatcost/assets/112126540/b3a5a84f-c4e3-4c32-8716-4a37cf7ca6fb">
-
 ## TEST MODE CREDIT CARD INFO
 4242 4242 4242 4242                  04/24            837              28976
 
