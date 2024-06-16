@@ -1,5 +1,5 @@
-## Sleek Clothing and Accessory E-commerce MERN Stack App
-# Refer to 'Documentation' folder for app documentation.
+# Sleek Clothing and Accessory E-commerce MERN Stack App
+## Refer to 'Documentation' folder for app documentation.
     In life, everything valuable bears a cost—be it time, effort, money, or other precious resources. The axiom, "everything comes at a price," is not merely a financial concept but an existential one. 
     
     This universal truth is often the invisible weight on our shoulders, reminding us of the constant trade-offs we make every day.
