@@ -1,5 +1,6 @@
 import "./CartItem.css";
-
+import { motion } from "framer-motion";
+import { buttonHoverVariants } from "../../utilities/variants";
 export default function CartItem({ lineItem, handleChangeQty }) {
   return (
     <div className="CartItem">
@@ -9,19 +10,25 @@ export default function CartItem({ lineItem, handleChangeQty }) {
         class="CartItemImage"
       />
       <div className="qty">
-        <button
+        <motion.button
+          variants={buttonHoverVariants}
+          initial="initial"
+          whileHover="hover"
           className="btn-xs mobile-btn"
           onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
         >
           −
-        </button>
+        </motion.button>
         <span className="itemqty">{lineItem.qty}</span>
-        <button
+        <motion.button
+          variants={buttonHoverVariants}
+          initial="initial"
+          whileHover="hover"
           className="btn-xs mobile-btn"
           onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}
         >
           +
-        </button>
+        </motion.button>
       </div>
       <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
     </div>
