@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { rotateVariants } from "../../utilities/variants";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./OrderHistoryPage.css";
 import * as ordersAPI from "../../utilities/orders-api";
@@ -26,7 +28,14 @@ export default function OrderHistoryPage({ user, setUser }) {
       <aside>
         <Link to="/orders/new">
           <div className="sidebarLogo">
-            <img src="/images/iPhone.png" alt="Shop Icon" />
+            <motion.img
+              src="/images/iPhone.png"
+              alt="Shop Icon"
+              variants={rotateVariants}
+              initial="hidden"
+              animate="animate"
+              whileHover="hover"
+            />
           </div>
         </Link>
         <div className="logout-wrapper">

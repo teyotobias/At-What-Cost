@@ -1,5 +1,7 @@
-import './UserLogOut.css';
-import { logOut } from '../../utilities/users-service';
+import "./UserLogOut.css";
+import { logOut } from "../../utilities/users-service";
+import { motion } from "framer-motion";
+import { buttonHoverVariants } from "../../utilities/variants";
 
 export default function UserLogOut({ user, setUser }) {
   function handleLogOut() {
@@ -9,7 +11,15 @@ export default function UserLogOut({ user, setUser }) {
 
   return (
     <div className="UserLogOut">
-      <button className="btn-sm logOutBtn" onClick={handleLogOut}>LOG OUT</button>
+      <motion.button
+        className="btn-sm logOutBtn"
+        onClick={handleLogOut}
+        variants={buttonHoverVariants}
+        initial="initial"
+        whileHover="hover"
+      >
+        LOG OUT
+      </motion.button>
       <div className="email">{user.email}</div>
     </div>
   );

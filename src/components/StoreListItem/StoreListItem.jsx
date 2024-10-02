@@ -1,5 +1,6 @@
-import './StoreListItem.css';
-
+import "./StoreListItem.css";
+import { buttonHoverVariants } from "../../utilities/variants.js";
+import { motion } from "framer-motion";
 export default function StoreListItem({ storeItem, handleAddToOrder }) {
   return (
     <div className="MenuListItem">
@@ -11,9 +12,16 @@ export default function StoreListItem({ storeItem, handleAddToOrder }) {
       <div className="name">{storeItem.name}</div>
       <div className="details">
         <span className="price">${storeItem.price.toFixed(2)}</span>
-        <button className="btn-sm add-btn" onClick={() => handleAddToOrder(storeItem._id)}>
+        <motion.button
+          className="btn-sm add-btn"
+          variants={buttonHoverVariants}
+          initial="visible"
+          animate="visible"
+          whileHover="hover"
+          onClick={() => handleAddToOrder(storeItem._id)}
+        >
           ADD
-        </button>
+        </motion.button>
       </div>
     </div>
   );
