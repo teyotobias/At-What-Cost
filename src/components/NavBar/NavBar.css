@@ -1,37 +1,35 @@
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 15%;
-    font-size: clamp(7px, 1.3vmax, 20px);
-    background-color: rgb(102,102,102);
-    width: 100%;
-    justify-self: flex-start;
-    padding: 1vmin 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15%;
+  font-size: clamp(7px, 1.3vmax, 20px);
+  background-color: rgb(102, 102, 102);
+  width: 100%;
+  justify-self: flex-start;
+  padding: 2vmin 0;
 }
 .navbarLogo {
-    max-width: 20%;
-    height: 100%;
-    object-fit: contain;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  max-width: 20%;
+  height: 100%;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
-    text-decoration: none;
-    color: rgb(206,251,244);
-    font-weight: bold;
+  text-decoration: none;
+  color: rgb(206, 251, 244);
+  font-weight: bold;
 }
 
-
-@media (width <= 500px) {
-    .navbarLogo {
-        max-width: 25%;
-    }
-    .navbar {
-        height: 10%;
-        font-size: 1vmax;
-    }
-
-} 
+@media (width <= 575px) {
+  .navbar {
+    height: 12%;
+    font-size: 2.1vmin;
+  }
+  .navbarLogo {
+    max-width: 30%;
+  }
+}

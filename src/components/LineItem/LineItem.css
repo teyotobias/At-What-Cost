@@ -1,26 +1,22 @@
 /* height to 20vmin for cart */
 .LineItem {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 0.5fr;
-    align-items: center;
-    justify-items: center;
-    /* justify-content: space-around; */
-    padding: 2vmin 1vmin;
-    color: white;
-    background-color: rgb(102,102,102);
-    border-bottom: .1vmin solid rgb(206,251,244);
-    font-size: 1.2vw;
-    gap: 1vmin;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  align-items: center;
+  justify-items: center;
+  /* justify-content: space-around; */
+  padding: 2vmin 1vmin;
+  color: white;
+  background-color: rgb(102, 102, 102);
+  border-bottom: 0.1vmin solid rgb(206, 251, 244);
+  font-size: 1.2vw;
+  gap: 1vmin;
 }
-
-
-
 
 .LineItem:last-child {
-    border-bottom: .1vmin solid rgb(206,251,244);
+  border-bottom: 0.1vmin solid rgb(206, 251, 244);
 }
-
 
 /* .LineItem .emoji {
     max-width: clamp(8vmin, 5vw, 15vmin);
@@ -28,14 +24,11 @@
     overflow: hidden;
 } */
 
-
 .LineItem .emoji img {
-    width: clamp(40px, 80%, 120px);
-    height: clamp(40px, 80%, 120px);
-    object-fit: contain;
-    
+  width: clamp(50px, 80%, 120px);
+  height: clamp(50px, 80%, 120px);
+  object-fit: contain;
 }
-
 
 /* .LineItem .qty {
     
@@ -48,21 +41,20 @@
 } */
 
 .LineItem button {
-    margin: 0;
-    font-size: 1vmin;
-    padding: .4vmin .5vmin;
-    color: rgb(206,251,244);
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    border: .1vmin solid rgb(240,240,240,0.8);
-    border-radius: .5vmin;
-    outline: none;
-    cursor: pointer;
-    background-color: rgb(102,102,102);
+  margin: 0;
+  font-size: 1vmin;
+  padding: 0.4vmin 0.5vmin;
+  color: rgb(206, 251, 244);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 0.1vmin solid rgb(240, 240, 240, 0.8);
+  border-radius: 0.5vmin;
+  outline: none;
+  cursor: pointer;
+  background-color: rgb(102, 102, 102);
 }
 
 /* .itemqty {
     padding: 3vmin;
 } */
-

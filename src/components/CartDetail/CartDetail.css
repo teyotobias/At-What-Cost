@@ -1,91 +1,90 @@
 .CartDetail {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* flex-direction: column;
     justify-content: flex-start; */
-    align-items: center;
-    padding: 3vmin;
-    font-size: 2vmin;
-    color: white;
-    border-radius: 2vmin;
-    width: 100%;
-  }
+  align-items: center;
+  padding: 3vmin;
+  font-size: 2vmin;
+  color: white;
+  border-radius: 2vmin;
+  width: 100%;
+}
 
-  .headerItem {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    border-top: .1vmin solid white;
-    border-bottom: .1vmin solid white;
-    padding: 1vmin;
-    font-size: clamp(7px, 1.5vw, 20px);
-    font-weight: 125;
-  }
-  .headerItem1 {
-    border-left: .1vmin solid white;
-  }
-  .headerItem3 {
-    border-right: .1vmin solid white;
-  }
+.headerItem {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-top: 0.1vmin solid white;
+  border-bottom: 0.1vmin solid white;
+  padding: 1vmin;
+  font-size: clamp(9px, 1.5vw, 20px);
+  font-weight: 125;
+}
+.headerItem1 {
+  border-left: 0.1vmin solid white;
+}
+.headerItem3 {
+  border-right: 0.1vmin solid white;
+}
 
-  
-  .CartDetail .line-item-container {
-    justify-content: flex-start;
-    height: calc(100vh - 18vmin);
-    width: 100%;
-    font-family: var(--app-font);
-  }
-  
-  .CartDetail .total {
-    grid-column: 3 / 4;
-    display: flex;
-    justify-content: center;
-    padding: 3vmin 3vmin;
-    color: white;
-    background-color: rgb(102,102,102);
-    margin-top: .5vmin;
-    border-radius: 2vmin;
-    font-size: clamp(7px, 5vmin, 15px);
-  }
-  
-  .CartDetail .total span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5vw;
-  }
-  
-  .CartDetail .total span.right {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1vmin;
-    padding: 1vmin;
-  }
-  
-  .CartDetail .hungry {
-    display: flex;
-    padding: 1rem;
-    align-content: center;
-    justify-content: center;
-    grid-column: 2 / 3;
-    font-size: 2vmin;
-  }
-  .btn-checkout {
-    background-color: rgb(206,251,244);
-    border-radius: 20px;
-    font-size: 2vmin;
-    padding: 1.5vmin 2vmin;
-    color: rgb(102,102,102);
-    font-weight: bold;
-    text-decoration: none;
-    text-align:center;
-    border: .1vmin solid rgb(240,240,240,0.8);
-    outline: none;
-    cursor: pointer;
-    margin-top: 1vmin;
-  }
+.CartDetail .line-item-container {
+  justify-content: flex-start;
+  height: calc(100vh - 18vmin);
+  width: 100%;
+  font-family: var(--app-font);
+}
 
-@media(width < 800px) {
+.CartDetail .total {
+  grid-column: 3 / 4;
+  display: flex;
+  justify-content: center;
+  padding: 3vmin 3vmin;
+  color: white;
+  background-color: rgb(102, 102, 102);
+  margin-top: 0.5vmin;
+  border-radius: 2vmin;
+  font-size: clamp(7px, 5vmin, 15px);
+}
+
+.CartDetail .total span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+}
+
+.CartDetail .total span.right {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vmin;
+  padding: 1vmin;
+}
+
+.CartDetail .hungry {
+  display: flex;
+  padding: 1rem;
+  align-content: center;
+  justify-content: center;
+  grid-column: 2 / 3;
+  font-size: 2vmin;
+}
+.btn-checkout {
+  background-color: rgb(206, 251, 244);
+  border-radius: 20px;
+  font-size: 2vmin;
+  padding: 1.5vmin 2vmin;
+  color: rgb(102, 102, 102);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 0.1vmin solid rgb(240, 240, 240, 0.8);
+  outline: none;
+  cursor: pointer;
+  margin-top: 1vmin;
+}
+
+@media (width < 800px) {
   .CartDetail {
     padding-top: 0;
   }

@@ -1,16 +1,26 @@
 .loginButton {
-    margin: 1vmin;
-    padding: 1vmin;
-    font-size: 2vmin;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    border: .1vmin solid rgb(240,240,240,0.8);
-    border-radius: .5vmin;
-    outline: none;
+  margin: 1vmin;
+  padding: 1vmin;
+  font-size: 2vmin;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 0.1vmin solid rgb(240, 240, 240, 0.8);
+  border-radius: 0.5vmin;
+  outline: none;
 }
 
 .loginButton:enabled {
-    background-color: rgb(102,102,102);
-    color: white;
+  background-color: rgb(102, 102, 102);
+  color: white;
+}
+
+.box-container {
+  padding: 2vmin;
+}
+
+@media (width <= 600px) {
+  .box-container {
+    width: 75%;
+  }
 }
