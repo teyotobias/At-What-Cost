@@ -1,5 +1,17 @@
 /* make sidebar cover up whole page and even go over navbar? */
 
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content; /* Ensures the div only takes up the space needed for the icon */
+}
+
+.cart svg {
+  width: 15px; /* Adjust to your preferred size */
+  height: 15px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -23,11 +35,11 @@
   align-items: center;
 }
 
-.a {
+/* .a {
   text-decoration: none;
   color: rgb(206, 251, 244);
   font-weight: bold;
-}
+} */
 a {
   text-decoration: none;
   color: rgb(206, 251, 244);
@@ -41,5 +53,16 @@ a {
   }
   .navbarLogo {
     max-width: 30%;
+  }
+  .cart svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media (width <= 400px) {
+  .cart svg {
+    width: 10px;
+    height: 10px;
   }
 }
