@@ -1,4 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"; // Import cart icon
 import "./NavBar.css";
 import UserLogOut from "../UserLogOut/UserLogOut";
 import Logo from "../Logo/Logo";
@@ -31,7 +33,7 @@ export default function NavBar({ user, setUser }) {
           initial="initial"
           whileHover="hover"
         >
-          Previous Orders
+          Orders
         </motion.div>
       </Link>
       <Link to="/cart" className="cart">
@@ -41,7 +43,7 @@ export default function NavBar({ user, setUser }) {
           initial="initial"
           whileHover="hover"
         >
-          Cart
+          <FontAwesomeIcon icon={faShoppingCart} />
         </motion.div>
       </Link>
       <UserLogOut user={user} setUser={setUser} />
