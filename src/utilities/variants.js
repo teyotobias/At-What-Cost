@@ -81,6 +81,46 @@ const navbarLogoVariants = {
   },
 };
 
+const sidebarVariants = {
+  open: {
+    x: 0, // Sidebar slides in from offscreen
+    width: "25vw",
+    transition: {
+      type: "tween",
+      duration: 0.3,
+      ease: "easeOut", // Smooth easing out for mobile
+    },
+  },
+  closed: {
+    width: "0vw",
+    x: "-75vw", // Sidebar slides out to the left
+    transition: {
+      type: "tween",
+      duration: 0.3,
+      ease: "easeIn", // Smooth easing in for closing
+    },
+  },
+};
+// Variants for the main content
+const contentVariants = {
+  expanded: {
+    marginLeft: "0vw", // Main content takes full width when sidebar is closed
+    transition: {
+      type: "tween",
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+  shrink: {
+    marginLeft: "25vw", // Main content shrinks to allow sidebar
+    transition: {
+      type: "tween",
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
+
 export {
   authPageVariants,
   signUpLogoVariants,
@@ -89,4 +129,6 @@ export {
   textHoverVariants,
   cardVariants,
   navbarLogoVariants,
+  sidebarVariants,
+  contentVariants,
 };

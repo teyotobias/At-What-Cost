@@ -1,4 +1,6 @@
 import "./NewOrderPage.css";
+import { motion } from "framer-motion";
+import { sidebarVariants, contentVariants } from "../../utilities/variants";
 import { useState, useEffect, useRef } from "react";
 import * as itemsAPI from "../../utilities/items-api";
 import * as ordersAPI from "../../utilities/orders-api";
@@ -65,15 +67,23 @@ export default function NewOrderPage({ user, setUser, cart, setCart }) {
         <button className="sidebar-toggle" onClick={toggleSidebar}>
           {isSidebarOpen ? "❮" : "❯"}
         </button>
-        <aside className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+        <motion.aside
+          className="sidebar"
+          variants={sidebarVariants}
+          initial="closed"
+          animate={isSidebarOpen ? "open" : "closed"}
+        >
           <CategoryList
             categories={categoriesRef.current}
             activeCat={activeCat}
             setActiveCat={setActiveCat}
           />
-        </aside>
-        <section
-          className={`main-content ${isSidebarOpen ? "sidebar-open" : ""}`}
+        </motion.aside>
+        <motion.section
+          className="main-content"
+          variants={contentVariants}
+          initial="expanded"
+          animate={isSidebarOpen ? "shrink" : "expanded"}
         >
           <StoreList
             storeItems={storeItems.filter(
@@ -81,7 +91,7 @@ export default function NewOrderPage({ user, setUser, cart, setCart }) {
             )}
             handleAddToOrder={handleAddToOrder}
           />
-        </section>
+        </motion.section>
       </div>
     </>
   );

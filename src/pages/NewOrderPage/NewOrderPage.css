@@ -32,34 +32,29 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgb(102, 102, 102);
-  position: sticky;
-  top: 0;
-  /* height: 85%; */
-  width: 0;
-  overflow: hidden;
-  transition: width 0.3s ease-in-out;
-  padding: 0;
+  position: fixed; /* used to be sticky */
+  top: 15%;
+  height: 100%;
+  left: 0;
+  padding: 2vmin 0;
   overflow-y: auto;
   z-index: 1000;
-}
-.sidebar.open {
-  width: 25vw;
-  padding: 0 1em;
 }
 
 .main-content {
   width: 100%;
   flex-grow: 1;
-  transition: width 0.3s ease-in-out;
   padding: 3vmin;
 }
 
-.sidebar-open .main-content {
-  width: calc(100% - 25vw);
-}
+@media (width <= 575px) {
+  /* Sidebar takes 40vw on smaller screens */
+  .sidebar {
+    width: 40vw !important;
+    top: 12%;
+  }
 
-@media (width <= 500px) {
-  .sidebar.open {
-    padding: 0 3.5em;
+  .sidebar-open .main-content {
+    margin-left: 40vw !important; /* Shrink main content to 60vw */
   }
 }
