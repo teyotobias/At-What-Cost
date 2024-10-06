@@ -1,3 +1,5 @@
+/* make sidebar cover up whole page and even go over navbar? */
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -8,6 +10,9 @@
   width: 100%;
   justify-self: flex-start;
   padding: 2vmin 0;
+  position: sticky;
+  top: 0;
+  z-index: 500;
 }
 .navbarLogo {
   max-width: 20%;

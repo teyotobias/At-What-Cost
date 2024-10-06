@@ -1,47 +1,43 @@
 .CategoryList {
-    color: rgb(206,251,244);
-    list-style: none;
-    padding: 0;
-    font-size: clamp(0.5em, 2vw, 1em);
-    height: 85vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    
-  }
+  color: rgb(206, 251, 244);
+  list-style: none;
+  padding: 0;
+  font-size: clamp(0.5em, 2vw, 1em);
+  height: 85vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
-  
-  .CategoryList li {
-    display: flex;
-    padding: .6vmin;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border-radius: .5vmin;
-    font-family: var(--app-font);
-    height: 10%;
-    /* margin: 1.6vmin; */
-    font-size: minmax(0.5em, 1em);
-  }
-      
-  .CategoryList li:hover:not(.active) {
-    cursor: pointer;
-    background-color: rgb(240,240,240, .8);
-    /* color: var(--white); */
-    font-weight: bold;
-    
-  }
-  
-  .CategoryList li.active {
-    color: var(--text-dark);
-    background-color: rgb(240,240,240, .8);
-    border: .1vmin solid rgb(220,220,220);
-  }
+.CategoryList li {
+  display: flex;
+  padding: 0.6vmin;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5vmin;
+  font-family: var(--app-font);
+  height: 10%;
+  /* margin: 1.6vmin; */
+  font-size: minmax(0.5em, 1em);
+}
 
+.CategoryList li:hover:not(.active) {
+  cursor: pointer;
+  background-color: rgb(240, 240, 240, 0.8);
+  /* color: var(--white); */
+  font-weight: bold;
+}
 
-  @media(width <= 500px) {
-    .CategoryList {
-      height: 75vh;
-    }
+.CategoryList li.active {
+  color: var(--text-dark);
+  background-color: rgb(240, 240, 240, 0.8);
+  border: 0.1vmin solid rgb(220, 220, 220);
+}
+
+@media (width <= 500px) {
+  .CategoryList {
+    height: 75vh;
   }
+}
