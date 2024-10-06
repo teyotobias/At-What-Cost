@@ -1,9 +1,13 @@
 import "./StoreListItem.css";
-import { buttonHoverVariants } from "../../utilities/variants.js";
+import { buttonHoverVariants, cardVariants } from "../../utilities/variants.js";
 import { motion } from "framer-motion";
 export default function StoreListItem({ storeItem, handleAddToOrder }) {
   return (
-    <div className="MenuListItem">
+    <motion.div
+      className="MenuListItem"
+      variants={cardVariants}
+      whileHover="hover"
+    >
       {/* <div className="emoji flex-ctr-ctr">{storeItem.image}</div> */}
       <div className="emoji">
         <img src={storeItem.image} alt={storeItem.name} />
@@ -23,6 +27,6 @@ export default function StoreListItem({ storeItem, handleAddToOrder }) {
           ADD
         </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 }

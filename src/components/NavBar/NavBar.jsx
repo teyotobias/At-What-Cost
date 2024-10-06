@@ -2,16 +2,24 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import UserLogOut from "../UserLogOut/UserLogOut";
 import Logo from "../Logo/Logo";
-import { textHoverVariants } from "../../utilities/variants";
+import {
+  textHoverVariants,
+  navbarLogoVariants,
+} from "../../utilities/variants";
 import { motion } from "framer-motion";
 export default function NavBar({ user, setUser }) {
   return (
     <nav className="navbar">
-      <div className="navbarLogo">
+      <motion.div
+        className="navbarLogo"
+        variants={navbarLogoVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <Link to="/">
           <Logo />
         </Link>
-      </div>
+      </motion.div>
       <Link to="/orders" className="previous-orders">
         <motion.div
           className="a"

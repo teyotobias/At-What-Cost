@@ -59,10 +59,31 @@ const rotateVariants = {
   },
 };
 
+const cardVariants = {
+  hover: {
+    scale: 1.1,
+  },
+};
+
+const navbarLogoVariants = {
+  hidden: {
+    x: "-100vw",
+  },
+  visible: {
+    x: 0,
+    transition: {
+      ease: "easeIn",
+      duration: 0.5,
+    },
+  },
+};
+
 export {
   authPageVariants,
   signUpLogoVariants,
   buttonHoverVariants,
   rotateVariants,
   textHoverVariants,
+  cardVariants,
+  navbarLogoVariants,
 };

@@ -32,7 +32,7 @@ a {
 @media (width <= 575px) {
   .navbar {
     height: 12%;
-    font-size: 2.1vmin;
+    /* font-size: 2.1vmin; */
   }
   .navbarLogo {
     max-width: 30%;
