@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import UserLogOut from "../UserLogOut/UserLogOut";
 import Logo from "../Logo/Logo";
@@ -8,9 +8,12 @@ import {
 } from "../../utilities/variants";
 import { motion } from "framer-motion";
 export default function NavBar({ user, setUser }) {
+  const location = useLocation();
+
   return (
     <nav className="navbar">
       <motion.div
+        key={location.pathname}
         className="navbarLogo"
         variants={navbarLogoVariants}
         initial="hidden"
