@@ -18,6 +18,7 @@ export default function NavBar({ user, setUser }) {
         variants={navbarLogoVariants}
         initial="hidden"
         animate="visible"
+        whileHover="hover"
       >
         <Link to="/">
           <Logo />

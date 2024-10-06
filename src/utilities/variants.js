@@ -76,6 +76,9 @@ const navbarLogoVariants = {
       duration: 0.5,
     },
   },
+  hover: {
+    scale: 1.1,
+  },
 };
 
 export {
