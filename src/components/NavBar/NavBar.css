@@ -10,6 +10,7 @@
 .cart svg {
   width: 15px; /* Adjust to your preferred size */
   height: 15px;
+  vertical-align: middle;
 }
 
 .navbar {
