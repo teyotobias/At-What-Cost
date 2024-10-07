@@ -1,6 +1,10 @@
 import "./NewOrderPage.css";
 import { motion } from "framer-motion";
-import { sidebarVariants, contentVariants } from "../../utilities/variants";
+import {
+  sidebarVariants,
+  contentVariants,
+  exitVariants,
+} from "../../utilities/variants";
 import { useState, useEffect, useRef } from "react";
 import * as itemsAPI from "../../utilities/items-api";
 import * as ordersAPI from "../../utilities/orders-api";
@@ -85,12 +89,19 @@ export default function NewOrderPage({ user, setUser, cart, setCart }) {
           initial="expanded"
           animate={isSidebarOpen ? "shrink" : "expanded"}
         >
-          <StoreList
-            storeItems={storeItems.filter(
-              (item) => item.category.name === activeCat
-            )}
-            handleAddToOrder={handleAddToOrder}
-          />
+          <motion.div
+            variants={exitVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <StoreList
+              storeItems={storeItems.filter(
+                (item) => item.category.name === activeCat
+              )}
+              handleAddToOrder={handleAddToOrder}
+            />
+          </motion.div>
         </motion.section>
       </div>
     </>
