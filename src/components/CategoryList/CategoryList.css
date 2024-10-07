@@ -25,15 +25,15 @@
 
 .CategoryList li:hover:not(.active) {
   cursor: pointer;
-  background-color: rgb(240, 240, 240, 0.8);
+  /* background-color: rgb(240, 240, 240, 0.8); */
   /* color: var(--white); */
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .CategoryList li.active {
-  color: var(--text-dark);
-  background-color: rgb(240, 240, 240, 0.8);
-  border: 0.1vmin solid rgb(220, 220, 220);
+  cursor: pointer;
+  background-color: rgb(200, 200, 200, 0.8);
+  border: 0.1vmin solid rgb(180, 180, 180);
 }
 
 @media (width <= 500px) {
