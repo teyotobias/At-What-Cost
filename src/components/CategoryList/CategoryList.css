@@ -2,7 +2,7 @@
   color: rgb(206, 251, 244);
   list-style: none;
   padding: 0;
-  font-size: clamp(0.5em, 2vw, 1em);
+  font-size: clamp(0.75em, 2vw, 1em);
   height: 85vh;
   margin: 0;
   display: flex;
