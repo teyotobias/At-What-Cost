@@ -141,6 +141,23 @@ const exitVariants = {
   },
 };
 
+const navTextHoverVariants = {
+  hidden: {
+    x: "-100vw",
+  },
+  visible: {
+    x: 0,
+    transition: {
+      ease: "easeIn",
+      duration: 0.5,
+    },
+  },
+  hover: {
+    scale: 1.2,
+    textShadow: "0px 0px 5px rgb(255,255,255)",
+  },
+};
+
 export {
   authPageVariants,
   signUpLogoVariants,
@@ -152,4 +169,5 @@ export {
   sidebarVariants,
   contentVariants,
   exitVariants,
+  navTextHoverVariants,
 };

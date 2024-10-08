@@ -23,8 +23,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  width: auto;
   height: auto;
+  padding: 0 10vmin;
 }
 .SignUpLogo {
   width: 100%;
