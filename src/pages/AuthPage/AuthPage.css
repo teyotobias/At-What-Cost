@@ -28,8 +28,10 @@
   padding: 0 10vmin;
 }
 .SignUpLogo {
-  width: 100%;
+  width: 85%;
   height: auto;
+  display: flex;
+  justify-content: center;
 }
 .SignUpLogo svg {
   width: 100%;
@@ -45,5 +47,8 @@
 @media (width <= 600px) {
   .SignUpLogo {
     margin-bottom: 5vmin;
+  }
+  .SignUpLogo {
+    width: 100%;
   }
 }
