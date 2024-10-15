@@ -4,6 +4,7 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 2vmin;
+  flex-direction: column;
 }
 
 .AuthPage h3 {

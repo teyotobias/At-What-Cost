@@ -158,6 +158,28 @@ const navTextHoverVariants = {
   },
 };
 
+const recruiterMessageVariant = {
+  hidden: {
+    y: "-100vw",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeIn",
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: "-100vw",
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+
 export {
   authPageVariants,
   signUpLogoVariants,
@@ -170,4 +192,5 @@ export {
   contentVariants,
   exitVariants,
   navTextHoverVariants,
+  recruiterMessageVariant,
 };
