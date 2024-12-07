@@ -1,7 +1,7 @@
 import "./StoreListItem.css";
 import { buttonHoverVariants, cardVariants } from "../../utilities/variants.js";
 import { motion } from "framer-motion";
-export default function StoreListItem({ storeItem, handleAddToOrder }) {
+export default function StoreListItem({ storeItem, handleAddToOrder, user }) {
   return (
     <motion.div
       className="MenuListItem"
@@ -23,6 +23,7 @@ export default function StoreListItem({ storeItem, handleAddToOrder }) {
           animate="visible"
           whileHover="hover"
           onClick={() => handleAddToOrder(storeItem._id)}
+          disabled={!user}
         >
           ADD
         </motion.button>

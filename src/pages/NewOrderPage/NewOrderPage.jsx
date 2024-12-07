@@ -35,6 +35,7 @@ export default function NewOrderPage({ user, setUser, cart, setCart }) {
 
     // load cart - unpaid order
     async function getCart() {
+      if (!user) return;
       const cart = await ordersAPI.getCart();
       setCart(cart);
     }
@@ -68,9 +69,13 @@ export default function NewOrderPage({ user, setUser, cart, setCart }) {
   return (
     <>
       <div className="page-container">
-        <button className="sidebar-toggle" onClick={toggleSidebar}>
+        <motion.button
+          whileHover={{ scale: 1.5 }}
+          className="sidebar-toggle"
+          onClick={toggleSidebar}
+        >
           {isSidebarOpen ? "❮" : "❯"}
-        </button>
+        </motion.button>
         <motion.aside
           className="sidebar"
           variants={sidebarVariants}
@@ -100,6 +105,7 @@ export default function NewOrderPage({ user, setUser, cart, setCart }) {
                 (item) => item.category.name === activeCat
               )}
               handleAddToOrder={handleAddToOrder}
+              user={user}
             />
           </motion.div>
         </motion.section>

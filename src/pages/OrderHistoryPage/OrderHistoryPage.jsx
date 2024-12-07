@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./OrderHistoryPage.css";
 import * as ordersAPI from "../../utilities/orders-api";
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
+import UserLogIn from "../../components/UserLogIn/UserLogIn";
 import OrderDetail from "../../components/OrderDetail/OrderDetail";
 import OrderList from "../../components/OrderList/OrderList";
 
@@ -13,6 +14,7 @@ export default function OrderHistoryPage({ user, setUser }) {
   const [activeOrder, setActiveOrder] = useState(null);
 
   useEffect(function () {
+    if (!user) return;
     async function getOrders() {
       const orders = await ordersAPI.getAllForUser();
       setActiveOrder(orders[0] || null);
@@ -38,16 +40,24 @@ export default function OrderHistoryPage({ user, setUser }) {
             />
           </div>
         </Link>
-        <div className="logout-wrapper">
-          <UserLogOut user={user} setUser={setUser} />
-        </div>
+        {user && (
+          <div className="logout-wrapper">
+            <UserLogOut user={user} setUser={setUser} />
+          </div>
+        )}
+        {!user && (
+          <div className="logout-wrapper">
+            <UserLogIn />
+          </div>
+        )}
       </aside>
       <OrderList
+        user={user}
         orders={orders}
         activeOrder={activeOrder}
         setActiveOrder={setActiveOrder}
       />
-      <OrderDetail order={activeOrder} isCartPage={false} />
+      <OrderDetail user={user} order={activeOrder} isCartPage={false} />
     </main>
   );
 }

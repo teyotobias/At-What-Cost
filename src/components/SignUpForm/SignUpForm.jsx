@@ -32,7 +32,7 @@ export default class SignUpForm extends Component {
       // payload of the JSON Web Token (JWT)
       const user = await signUp(formData);
       this.props.setUser(user);
-
+      this.props.navigate("/orders/new");
       // scroll to top after logging in
       window.scrollTo(0, 0);
     } catch {
