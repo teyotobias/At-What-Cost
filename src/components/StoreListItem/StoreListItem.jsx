@@ -1,7 +1,10 @@
 import "./StoreListItem.css";
 import { buttonHoverVariants, cardVariants } from "../../utilities/variants.js";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 export default function StoreListItem({ storeItem, handleAddToOrder, user }) {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       className="MenuListItem"
@@ -22,8 +25,9 @@ export default function StoreListItem({ storeItem, handleAddToOrder, user }) {
           initial="visible"
           animate="visible"
           whileHover="hover"
-          onClick={() => handleAddToOrder(storeItem._id)}
-          disabled={!user}
+          onClick={() =>
+            user ? handleAddToOrder(storeItem._id) : navigate("/login")
+          }
         >
           ADD
         </motion.button>
