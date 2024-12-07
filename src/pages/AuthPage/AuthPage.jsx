@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   signUpLogoVariants,
   authPageVariants,
@@ -12,6 +13,7 @@ import RecruiterMessage from "../../components/RecruiterMessage/RecruiterMessage
 
 export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
+  const navigate = useNavigate();
 
   return (
     <motion.main
@@ -35,7 +37,7 @@ export default function AuthPage({ setUser }) {
         {showLogin ? (
           <LoginForm setUser={setUser} />
         ) : (
-          <SignUpForm setUser={setUser} />
+          <SignUpForm setUser={setUser} navigate={navigate} />
         )}
       </div>
     </motion.main>

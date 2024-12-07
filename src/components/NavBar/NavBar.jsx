@@ -4,6 +4,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"; // Import ca
 import "./NavBar.css";
 import UserLogOut from "../UserLogOut/UserLogOut";
 import Logo from "../Logo/Logo";
+import UserLogIn from "../UserLogIn/UserLogIn";
 import {
   textHoverVariants,
   navbarLogoVariants,
@@ -46,7 +47,8 @@ export default function NavBar({ user, setUser }) {
           <FontAwesomeIcon icon={faShoppingCart} />
         </motion.div>
       </Link>
-      <UserLogOut user={user} setUser={setUser} />
+      {user && <UserLogOut user={user} setUser={setUser} />}
+      {!user && <UserLogIn />}
     </nav>
   );
 }
