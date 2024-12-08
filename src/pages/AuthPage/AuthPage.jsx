@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {
   signUpLogoVariants,
   authPageVariants,
+  textHoverVariants,
 } from "../../utilities/variants.js";
 import "./AuthPage.css";
 import LoginForm from "../../components/LogInForm/LogInForm";
@@ -31,9 +32,14 @@ export default function AuthPage({ setUser }) {
         >
           <Logo />
         </motion.div>
-        <h3 onClick={() => setShowLogin(!showLogin)}>
+        <motion.h3
+          variants={textHoverVariants}
+          initial="initial"
+          whileHover="hover"
+          onClick={() => setShowLogin(!showLogin)}
+        >
           {showLogin ? "SIGN UP" : "LOG IN"}
-        </h3>
+        </motion.h3>
         {showLogin ? (
           <LoginForm setUser={setUser} />
         ) : (
