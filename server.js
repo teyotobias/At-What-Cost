@@ -9,6 +9,9 @@ require("dotenv").config();
 //connect to db
 require("./config/database");
 
+// Initialize Redis
+const redisClient = require("./config/redis");
+
 const app = express();
 
 app.use(cors());
@@ -31,11 +34,10 @@ const port = process.env.PORT || 3001;
 
 // API routes here, before the "catch all" route
 app.use("/api/users", require("./routes/api/users"));
-
-//protect api routes from anon users:
-const ensureLoggedIn = require("./config/ensureLoggedIn");
 app.use("/api/items", require("./routes/api/items"));
 app.use("/api/orders", require("./routes/api/orders"));
+//protect api routes from anon users:
+// const ensureLoggedIn = require("./config/ensureLoggedIn");
 //The following "catch all" route * is necessary
 // to return the index.html on all non-AJAX requests
 app.get("/*", function (req, res) {
