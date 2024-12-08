@@ -1,5 +1,6 @@
 const Order = require("../../models/order");
 const domain = process.env.DOMAIN || "http://localhost:3000";
+const redisClient = require("../../config/redis");
 // const Item = require('../../models/item');
 const Stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
 module.exports = {
@@ -13,11 +14,25 @@ module.exports = {
 
 async function getAllForUser(req, res) {
   try {
+    const cacheKey = `orders-${req.user._id}`;
+    const cachedOrders = await redisClient.get(cacheKey);
+
+    if (cachedOrders) {
+      console.log("Cache hit for past orders!");
+      return res.json(JSON.parse(cachedOrders));
+    }
+
+    console.log("Cache miss for past orders!");
     const orders = await Order.find({ user: req.user._id, isPaid: true }).sort(
       "-updatedAt"
     );
+
+    await redisClient.set(cacheKey, JSON.stringify(orders), {
+      EX: 1200,
+    });
     res.json(orders);
   } catch (err) {
+    console.error("Error fetching past orders", err);
     res.status(500).json({ success: false, message: err.message });
   }
 }
@@ -118,6 +133,9 @@ async function verifySession(req, res) {
       //update cart status
       cart.isPaid = true;
       await cart.save();
+
+      const cacheKey = `orders-${cart.user._id}`;
+      await redisClient.del(cacheKey);
 
       //respond w/ updated cart:
       res.json({ verified: true, cart });
