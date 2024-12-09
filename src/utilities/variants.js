@@ -15,7 +15,7 @@ const signUpLogoVariants = {
   visible: {
     x: [0, 50, -50, 50, -50, 0],
     transition: {
-      delay: 3,
+      delay: 1,
     },
   },
 };
