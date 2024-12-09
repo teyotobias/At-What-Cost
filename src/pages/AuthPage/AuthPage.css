@@ -29,12 +29,25 @@
   padding: 0 10vmin;
 }
 .SignUpLogo {
-  width: 85%;
+  width: 80%;
   height: auto;
   display: flex;
   justify-content: center;
+  margin-bottom: 5vmin;
 }
-.SignUpLogo svg {
+
+@media (max-width: 500px) {
+  .SignUpLogo {
+    margin-bottom: 10vmin;
+  }
+}
+
+@media (max-height: 700px) {
+  .SignUpLogo {
+    width: 70%;
+  }
+}
+/* .SignUpLogo svg {
   width: 100%;
   height: auto;
 }
@@ -52,4 +65,4 @@
   .SignUpLogo {
     width: 100%;
   }
-}
+} */

@@ -10,7 +10,6 @@ import "./AuthPage.css";
 import LoginForm from "../../components/LogInForm/LogInForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import Logo from "../../components/Logo/Logo";
-import RecruiterMessage from "../../components/RecruiterMessage/RecruiterMessage.jsx";
 
 export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
@@ -23,7 +22,6 @@ export default function AuthPage({ setUser }) {
       initial="hidden"
       animate="visible"
     >
-      <RecruiterMessage />
       <div className="container">
         <motion.div
           className="SignUpLogo"

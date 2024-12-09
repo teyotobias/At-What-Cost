@@ -18,7 +18,7 @@
   justify-content: space-around;
   align-items: center;
   height: 15%;
-  font-size: clamp(7px, 1.3vmax, 20px);
+  font-size: clamp(13px, 1.3vmax, 20px);
   background-color: rgb(102, 102, 102);
   width: 100%;
   justify-self: flex-start;
@@ -28,12 +28,11 @@
   z-index: 1101;
 }
 .navbarLogo {
-  max-width: 20%;
-  height: 100%;
+  width: auto;
+  max-width: 60px;
+  height: auto;
   object-fit: contain;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1px 0;
 }
 
 /* .a {
@@ -47,14 +46,17 @@ a {
   font-weight: bold;
 }
 
-@media (width <= 575px) {
-  .navbar {
-    height: 12%;
-    /* font-size: 2.1vmin; */
-  }
+@media (min-height: 650px) {
   .navbarLogo {
-    max-width: 30%;
+    max-width: 80px;
   }
+}
+@media (min-height: 750px) {
+  .navbarLogo {
+    max-width: 85px;
+  }
+}
+@media (width <= 575px) {
   .cart svg {
     width: 13px;
     height: 13px;
@@ -65,5 +67,11 @@ a {
   .cart svg {
     width: 10px;
     height: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .navbarLogo {
+    max-width: 75px;
   }
 }
