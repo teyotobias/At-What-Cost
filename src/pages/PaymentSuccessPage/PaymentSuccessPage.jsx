@@ -1,14 +1,14 @@
 // PaymentSuccessPage.jsx
-import { useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { verifySession } from '../../utilities/orders-api';
+import { useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { verifySession } from "../../utilities/orders-api";
 // import { toast } from 'react-toastify';
-import './PaymentSuccessPage.css';
+import "./PaymentSuccessPage.css";
 // import Logo from '../../components/Logo/Logo';
 export default function PaymentSuccessPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const sessionId = searchParams.get('session_id');
+  const sessionId = searchParams.get("session_id");
 
   // useEffect(() => {
   //   const verifyPayment = async () => {
@@ -30,24 +30,23 @@ export default function PaymentSuccessPage() {
   //   verifyPayment();
   // }, [sessionId, navigate]);
 
-
   useEffect(() => {
     const verifyPayment = async () => {
       if (sessionId) {
         try {
           const response = await verifySession(sessionId);
           if (response.verified) {
-            navigate('/orders');
+            navigate("/orders");
             // navigate('http://172.20.10.4:3000/orders');
             // Call the toast function with a custom render component
 
             // const toastId = 'paymentSuccessId';
             // toast(<div className="toastContainer">
-            //   Thank You! 
+            //   Thank You!
             //   <button onClick={() => {
             //     toast.dismiss(toastId);
             //     navigate('/orders');
-            //    }} 
+            //    }}
             //    style={{ display: 'block', marginTop: '10px', color: 'rgb(102,102,102', background: 'rgb(206,251,244)', cursor: 'pointer' }}>
             //     Go to Orders
             //   </button>
@@ -60,11 +59,11 @@ export default function PaymentSuccessPage() {
             //   style: { marginBottom: 'clamp(5px, 5vh, 10px'},
             // });
           } else {
-            navigate('/orders/new');
+            navigate("/orders/new");
           }
         } catch (error) {
-          console.error('Verification failed: ', error);
-          navigate('/orders/new');
+          console.error("Verification failed: ", error);
+          navigate("/orders/new");
         }
       }
     };
@@ -79,7 +78,5 @@ export default function PaymentSuccessPage() {
     //   </div>
     // </>
     <div>Verifying your payment...</div>
-
   );
-
 }

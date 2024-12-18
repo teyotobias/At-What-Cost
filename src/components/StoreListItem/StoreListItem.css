@@ -25,6 +25,7 @@ img {
   object-position: center;
   height: 100%;
   width: 100%;
+  border-radius: 1vmin 1vmin 0 0;
 }
 
 .MenuListItem .name {
