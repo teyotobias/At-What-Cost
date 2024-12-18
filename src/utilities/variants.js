@@ -77,8 +77,8 @@ const navbarLogoVariants = {
     },
   },
   hover: {
-    scale: 1.1,
-    textShadow: "0px 0px 5px rgb(255,255,255)",
+    // scale: 1.1,
+    // textShadow: "0px 0px 5px rgb(255,255,255)",
   },
 };
 
