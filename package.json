@@ -52,5 +52,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "engines": {
+    "node": "20.18.1",
+    "npm": "10.8.2"
+  }
 }
